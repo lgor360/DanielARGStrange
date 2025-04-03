@@ -1,0 +1,535 @@
+
+
+  <!DOCTYPE html>
+  
+    <html lang="ru" xmlns="http://www.w3.org/1999/xhtml">
+      <head>
+        <title sg-default="SOGo Groupware">SOGo Groupware</title>
+        <meta name="hideFrame" content="0" />
+        <meta name="description" content="SOGo Web Interface" />
+        <meta name="author" content="Inverse inc." />
+        <meta name="robots" content="noindex, nofollow" />
+        <meta name="build" content="@3228d90dd886 202502160144" />
+        <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1" />
+        <link rev="made" href="mailto:support@sogo.nu" />
+        <link href="/SOGo.woa/WebServerResources/img/sogo.ico?lm=1742559566" rel="shortcut icon" type="image/x-icon" />
+        
+          <link href="/SOGo.woa/WebServerResources/css/theme-default.css?lm=1740494937" rel="stylesheet" type="text/css" />
+        
+        <link href="/SOGo.woa/WebServerResources/css/styles.css?lm=1740494937" rel="stylesheet" type="text/css" />
+        
+        
+        <!--[if IE]>
+          <link href="/SOGo.woa/WebServerResources/css/no-animation.css?lm=1740494937" rel="stylesheet" type="text/css" />
+        <![endif]-->
+      </head>
+
+      <body class="main" ng-app="SOGo.MainUI">
+
+        <noscript>
+          <div layout-fill="layout-fill" layout-align="center center" layout="column">
+            <div class="md-padding">
+              SOGo &#1090;&#1088;&#1077;&#1073;&#1091;&#1077;&#1090; &#1088;&#1072;&#1073;&#1086;&#1090;&#1099; Javascript. &#1055;&#1086;&#1078;&#1072;&#1083;&#1091;&#1081;&#1089;&#1090;&#1072;, &#1074;&#1082;&#1083;&#1102;&#1095;&#1080;&#1090;&#1077; &#1077;&#1075;&#1086; &#1074; &#1086;&#1087;&#1094;&#1080;&#1103;&#1093; &#1073;&#1088;&#1072;&#1091;&#1079;&#1077;&#1088;&#1072;.
+            </div>
+            <div>
+              <a href="../../../SOGo" class="md-button">
+                &#1055;&#1086;&#1074;&#1090;&#1086;&#1088;&#1080;&#1090;&#1100; &#1087;&#1086;&#1087;&#1099;&#1090;&#1082;&#1091;
+              </a>
+            </div>
+          </div>
+        </noscript>
+
+        
+          
+
+          
+          
+  <script type="text/javascript">
+    var cookieUsername = "";
+    var language = 'Russian';
+  </script>
+
+  
+  <main layout-fill="layout-fill" ng-controller="LoginController as app" layout-gt-md="row" class="view md-default-theme md-background md-hue-1 md-bg" ui-view="login" layout-align-gt-md="center start">
+    <md-content class="ng-cloak" flex="100" ng-show="app.showLogin" layout-align="start stretch" layout="column">
+      
+      <div class="md-whiteframe-3dp" id="loginContent" flex="100" layout="column" layout-gt-md="row">
+          <div flex-gt-md="50" class="sg-logo">
+            <div layout="row" class="md-padding">
+              <div class="md-flex hide show-gt-md"></div>
+              <img src="/SOGo.woa/WebServerResources/img/sogo-full.svg?lm=1742580547" class="md-margin" alt="*" />
+            </div>
+            
+          </div>
+          <div flex-gt-md="50" class="sg-login md-default-theme md-bg md-accent">
+            <div id="login" class="sg-login-content md-padding">
+              <form method="post" ng-cloak="ng-cloak" ng-submit="app.login()" layout="column" name="loginForm">
+                
+                <div ng-if="!app.loginState">
+                  <md-input-container class="md-block">
+                    <label>&#1051;&#1086;&#1075;&#1080;&#1085;</label>
+                    <md-icon>person</md-icon>
+                    <input type="text" name="3.1.1.3.3.1.4.4.1.3.3.1.1.3.1.5" value="" autocorrect="off" ng-model="app.creds.username" ng-required="true" autocapitalize="off" ng-change="app.usernameChanged()" ng-blur="app.retrievePasswordRecoveryEnabled()" />
+                  </md-input-container>
+                  <md-input-container class="md-block">
+                    <label>&#1055;&#1072;&#1088;&#1086;&#1083;&#1100;</label>
+                    <md-icon>vpn_key</md-icon>
+                    <input type="password" name="3.1.1.3.3.1.4.4.1.3.3.1.1.3.3.5" value="" id="passwordField" ng-model="app.creds.password" ng-required="true" />
+                    <md-icon id="password-visibility-icon" ng-click="app.changePasswordVisibility()">visibility</md-icon>
+                  </md-input-container>
+                  
+
+                  
+                  <div layout="row" layout-align="start end">
+                    <md-icon>language</md-icon>
+                    <md-input-container class="md-flex">
+                      <label>&#1042;&#1099;&#1073;&#1088;&#1072;&#1090;&#1100;...</label>
+                      <md-select ng-model="app.creds.language" placeholder="&#1056;&#1091;&#1089;&#1089;&#1082;&#1080;&#1081;" ng-change="app.changeLanguage($event)">
+                        
+                          <md-option value="Indonesian">
+                            bahasa Indonesia
+                          </md-option>
+                        
+                          <md-option value="Bosnian">
+                            Bosanski
+                          </md-option>
+                        
+                          <md-option value="Catalan">
+                            Catal&#224;
+                          </md-option>
+                        
+                          <md-option value="Montenegrin">
+                            Crnogorski
+                          </md-option>
+                        
+                          <md-option value="Welsh">
+                            Cymraeg
+                          </md-option>
+                        
+                          <md-option value="Czech">
+                            &#268;esky
+                          </md-option>
+                        
+                          <md-option value="Danish">
+                            Dansk (Danmark)
+                          </md-option>
+                        
+                          <md-option value="German">
+                            Deutsch
+                          </md-option>
+                        
+                          <md-option value="English">
+                            English
+                          </md-option>
+                        
+                          <md-option value="SpanishArgentina">
+                            Espa&#241;ol (Argentina)
+                          </md-option>
+                        
+                          <md-option value="SpanishSpain">
+                            Espa&#241;ol (Espa&#241;a)
+                          </md-option>
+                        
+                          <md-option value="Basque">
+                            Euskara
+                          </md-option>
+                        
+                          <md-option value="French">
+                            Fran&#231;ais
+                          </md-option>
+                        
+                          <md-option value="Galician">
+                            Galego
+                          </md-option>
+                        
+                          <md-option value="Croatian">
+                            Hrvatski
+                          </md-option>
+                        
+                          <md-option value="Italian">
+                            Italiano
+                          </md-option>
+                        
+                          <md-option value="Icelandic">
+                            &#205;slenska
+                          </md-option>
+                        
+                          <md-option value="Latvian">
+                            Latvie&#353;u
+                          </md-option>
+                        
+                          <md-option value="Lithuanian">
+                            Lietuvi&#371;
+                          </md-option>
+                        
+                          <md-option value="Hungarian">
+                            Magyar
+                          </md-option>
+                        
+                          <md-option value="Dutch">
+                            Nederlands
+                          </md-option>
+                        
+                          <md-option value="NorwegianBokmal">
+                            Norsk bokm&#229;l
+                          </md-option>
+                        
+                          <md-option value="NorwegianNynorsk">
+                            Norsk nynorsk
+                          </md-option>
+                        
+                          <md-option value="Polish">
+                            Polski
+                          </md-option>
+                        
+                          <md-option value="Portuguese">
+                            Portugu&#234;s
+                          </md-option>
+                        
+                          <md-option value="BrazilianPortuguese">
+                            Portugu&#234;s brasileiro
+                          </md-option>
+                        
+                          <md-option value="Romanian">
+                            Rom&#226;n&#259;
+                          </md-option>
+                        
+                          <md-option value="Slovak">
+                            Slovensky
+                          </md-option>
+                        
+                          <md-option value="Slovenian">
+                            Sloven&#353;&#269;ina
+                          </md-option>
+                        
+                          <md-option value="SerbianLatin">
+                            Srpski
+                          </md-option>
+                        
+                          <md-option value="Finnish">
+                            Suomi
+                          </md-option>
+                        
+                          <md-option value="Swedish">
+                            Svenska
+                          </md-option>
+                        
+                          <md-option value="TurkishTurkey">
+                            T&#252;rk&#231;e (T&#252;rkiye)
+                          </md-option>
+                        
+                          <md-option value="Bulgarian">
+                            &#1041;&#1098;&#1083;&#1075;&#1072;&#1088;&#1089;&#1082;&#1080;
+                          </md-option>
+                        
+                          <md-option value="Macedonian">
+                            &#1052;&#1072;&#1082;&#1077;&#1076;&#1086;&#1085;&#1089;&#1082;&#1080;
+                          </md-option>
+                        
+                          <md-option value="Russian">
+                            &#1056;&#1091;&#1089;&#1089;&#1082;&#1080;&#1081;
+                          </md-option>
+                        
+                          <md-option value="Serbian">
+                            &#1057;&#1088;&#1087;&#1089;&#1082;&#1080;
+                          </md-option>
+                        
+                          <md-option value="Ukrainian">
+                            &#1059;&#1082;&#1088;&#1072;&#1111;&#1085;&#1089;&#1100;&#1082;&#1072;
+                          </md-option>
+                        
+                          <md-option value="Kazakh">
+                            &#1178;&#1072;&#1079;&#1072;&#1179;
+                          </md-option>
+                        
+                          <md-option value="Hebrew">
+                            &#1506;&#1489;&#1512;&#1497;&#1514;
+                          </md-option>
+                        
+                          <md-option value="Arabic">
+                            &#1575;&#1604;&#1593;&#1585;&#1576;&#1610;&#1577;
+                          </md-option>
+                        
+                          <md-option value="Japanese">
+                            &#26085;&#26412;&#35486;
+                          </md-option>
+                        
+                          <md-option value="ChineseTaiwan">
+                            &#27491;&#39636;&#20013;&#25991;
+                          </md-option>
+                        
+                          <md-option value="ChineseChina">
+                            &#31616;&#20307;&#20013;&#25991;
+                          </md-option>
+                        
+                      </md-select>
+                    </md-input-container>
+                  </div>
+
+                  
+                  
+                  
+                  <div layout="row" layout-align="center center">
+                    <md-switch class="md-accent md-hue-2" ng-model="app.creds.rememberLogin" arial-label="&#1047;&#1072;&#1087;&#1086;&#1084;&#1085;&#1080;&#1090;&#1100; &#1080;&#1084;&#1103; &#1087;&#1086;&#1083;&#1100;&#1079;&#1086;&#1074;&#1072;&#1090;&#1077;&#1083;&#1103;">
+                      &#1047;&#1072;&#1087;&#1086;&#1084;&#1085;&#1080;&#1090;&#1100; &#1080;&#1084;&#1103; &#1087;&#1086;&#1083;&#1100;&#1079;&#1086;&#1074;&#1072;&#1090;&#1077;&#1083;&#1103;
+                    </md-switch>
+                  </div>
+                  
+                </div>
+
+                
+                <div ng-if="app.passwordRecovery.passwordRecoveryEnabled" layout-align="center center" layout="row">
+                  <div ng-if="app.showLogin">
+                    <a href="#" class="password-lost-link" sg-ripple-click="loginContent" ng-click="app.passwordRecoveryInfo()">&#1055;&#1072;&#1088;&#1086;&#1083;&#1100; &#1091;&#1090;&#1077;&#1088;&#1103;&#1085;</a>
+                  </div>
+                </div>
+
+                
+                <div ng-if="!app.loginState" layout-align="space-between center" layout="row">
+                  <md-button aria-label="&#1054; &#1089;&#1080;&#1089;&#1090;&#1077;&#1084;&#1077;" class="md-icon-button" ng-click="app.showAbout()">
+                    <md-icon>info</md-icon>
+                  </md-button>
+                  <div>
+                    <md-button aria-label="&#1057;&#1086;&#1077;&#1076;&#1080;&#1085;&#1077;&#1085;&#1080;&#1077;" ng-if="!app.loginState" class="md-fab md-accent md-hue-2" sg-ripple-click="loginContent" ng-disabled="loginForm.$invalid" type="submit">
+                      <md-icon>arrow_forward</md-icon>
+                    </md-button>
+                  </div>
+                </div>
+
+              <sg-ripple ng-class="{ 'md-warn': app.loginState == 'error' }" class="md-default-theme md-accent md-bg"></sg-ripple>
+              <sg-ripple-content class="md-flex ng-hide" ng-switch="app.loginState" layout-fill="layout-fill" layout-align="center center" layout="column">
+
+                
+                <div layout-align="center center" layout="column" ng-switch-when="authenticating">
+                  <md-progress-circular md-diameter="32" class="md-hue-1" md-mode="indeterminate"></md-progress-circular>
+                  <div class="md-default-theme md-accent md-hue-1 md-fg md-padding">
+                    &#1055;&#1088;&#1086;&#1074;&#1077;&#1088;&#1082;&#1072; &#1076;&#1086;&#1089;&#1090;&#1091;&#1087;&#1072;
+                  </div>
+                </div>
+
+                
+                
+                <div layout-fill="layout-fill" layout-align="center center" layout="row" ng-switch-when="totpcode">
+                  <div flex="80" flex-sm="50" flex-gt-sm="40">
+                    <md-input-container class="md-block">
+                      <label>&#1050;&#1086;&#1076; &#1074;&#1077;&#1088;&#1080;&#1092;&#1080;&#1082;&#1072;&#1094;&#1080;&#1080;</label>
+                      <md-icon>lock</md-icon>
+                      <input type="text" name="3.1.1.3.3.1.4.4.1.3.3.1.1.13.4.1.2.1.1.5" value="" ng-model="app.creds.verificationCode" ng-required="app.loginState == 'totpcode'" ng-pattern="app.verificationCodePattern" sg-focus-on="totpcode" />
+                      <div class="sg-hint">&#1042;&#1074;&#1077;&#1076;&#1080;&#1090;&#1077; 6-&#1079;&#1085;&#1072;&#1095;&#1085;&#1099;&#1081; &#1082;&#1086;&#1076; &#1087;&#1086;&#1076;&#1090;&#1074;&#1077;&#1088;&#1078;&#1076;&#1077;&#1085;&#1080;&#1103; &#1080;&#1079; &#1087;&#1088;&#1080;&#1083;&#1086;&#1078;&#1077;&#1085;&#1080;&#1103; &#1076;&#1074;&#1091;&#1093;&#1092;&#1072;&#1082;&#1090;&#1086;&#1088;&#1085;&#1086;&#1081; &#1072;&#1091;&#1090;&#1077;&#1085;&#1090;&#1080;&#1092;&#1080;&#1082;&#1072;&#1094;&#1080;&#1080;.</div>
+                    </md-input-container>
+                    <div layout="row" layout-align="space-between center">
+                      <md-button sg-ripple-click="loginContent" aria-label="&#1054;&#1090;&#1084;&#1077;&#1085;&#1080;&#1090;&#1100;" class="md-icon-button" ng-click="app.restoreLogin()">
+                        <md-icon>arrow_backward</md-icon>
+                      </md-button>
+                      <md-button aria-label="&#1057;&#1086;&#1077;&#1076;&#1080;&#1085;&#1077;&#1085;&#1080;&#1077;" ng-if="app.loginState == 'totpcode'" class="md-fab md-accent md-hue-2" ng-disabled="loginForm.$invalid" type="submit" ng-click="app.login()">
+                        <md-icon>arrow_forward</md-icon>
+                      </md-button>
+                    </div>
+                  </div>
+                </div>
+                
+                <div layout-fill="layout-fill" layout-align="center center" layout="row" ng-switch-when="totpdisabled">
+                  <div flex-xs="flex-xs" flex-gt-xs="50" layout-align="center center" layout="column">
+                    <md-icon class="md-accent md-hue-1 sg-icon--large">warning</md-icon>
+                    <div ng-if="app.cn" class="md-default-theme md-accent md-hue-1 md-fg md-padding">
+                      &#1044;&#1086;&#1073;&#1088;&#1086; &#1087;&#1086;&#1078;&#1072;&#1083;&#1086;&#1074;&#1072;&#1090;&#1100; {{app.cn}}
+                    </div>
+                    <div class="md-padding" layout-align="start center" layout="row">
+                      <md-icon>priority_high</md-icon>
+                      <div class="md-padding">
+                        &#1044;&#1074;&#1091;&#1093;&#1092;&#1072;&#1082;&#1090;&#1086;&#1088;&#1085;&#1072;&#1103; &#1072;&#1091;&#1090;&#1077;&#1085;&#1090;&#1080;&#1092;&#1080;&#1082;&#1072;&#1094;&#1080;&#1103; &#1086;&#1090;&#1082;&#1083;&#1102;&#1095;&#1077;&#1085;&#1072;. &#1042;&#1082;&#1083;&#1102;&#1095;&#1080;&#1090;&#1077; &#1076;&#1074;&#1091;&#1093;&#1092;&#1072;&#1082;&#1090;&#1086;&#1088;&#1085;&#1091;&#1102; &#1072;&#1091;&#1090;&#1077;&#1085;&#1090;&#1080;&#1092;&#1080;&#1082;&#1072;&#1094;&#1080;&#1102; &#1074; &#1087;&#1072;&#1088;&#1072;&#1084;&#1077;&#1090;&#1088;&#1072;&#1093; &#1080; &#1087;&#1077;&#1088;&#1077;&#1085;&#1072;&#1089;&#1090;&#1088;&#1086;&#1081;&#1090;&#1077; &#1087;&#1088;&#1086;&#1075;&#1088;&#1072;&#1084;&#1084;&#1091; TOTP.
+                      </div>
+                    </div>
+                    <div layout="row" layout-align="end center">
+                      <md-button sg-ripple-click="loginContent" ng-click="app.continueLogin()">Continue</md-button>
+                    </div>
+                  </div>
+                </div>
+                
+
+                
+                <div layout-align="center center" layout="column" ng-switch-when="passwordchange">
+                  <md-icon ng-if="!(app.isInPasswordRecoveryMode() || app.isPasswordExpiredSecurity())" class="md-accent md-hue-1 sg-icon--large">watch_later</md-icon>
+                  <md-icon ng-if="app.isInPasswordRecoveryMode() || app.isPasswordExpiredSecurity()" class="md-accent md-hue-1 sg-icon--large">vpn_key</md-icon>
+                  <div ng-if="!app.isInPasswordRecoveryMode()" class="md-default-theme md-accent md-hue-1 md-fg md-padding">
+                    <span ng-if="!app.isPasswordExpiredSecurity()">&#1042;&#1072;&#1096; &#1087;&#1072;&#1088;&#1086;&#1083;&#1100; &#1080;&#1089;&#1090;&#1077;&#1082;, &#1074;&#1074;&#1077;&#1076;&#1080;&#1090;&#1077; &#1085;&#1086;&#1074;&#1099;&#1081; &#1085;&#1080;&#1078;&#1077;</span>
+                    <span ng-if="app.isPasswordExpiredSecurity()">Your password is too weak. Please choose a stronger password to enhance your security</span>
+                  </div>
+                  <div ng-if="app.isInPasswordRecoveryMode()" class="md-default-theme md-accent md-hue-1 md-fg md-padding">
+                    &#1055;&#1086;&#1078;&#1072;&#1083;&#1091;&#1081;&#1089;&#1090;&#1072;, &#1074;&#1074;&#1077;&#1076;&#1080;&#1090;&#1077; &#1085;&#1086;&#1074;&#1099;&#1081; &#1087;&#1072;&#1088;&#1086;&#1083;&#1100; &#1085;&#1080;&#1078;&#1077;
+                  </div>
+                  <div flex="100">
+                    <div layout-xs="column" layout="row">
+                    <md-input-container ng-if="!(app.isInPasswordRecoveryMode())" class="md-block" flex="flex">
+                        <label>Current password
+                        </label>
+                        <input type="password" name="3.1.1.3.3.1.4.4.1.3.3.1.1.13.7.9.1.1.3" value="" ng-model="app.passwords.oldPassword" sg-no-dirty-check="true" />
+                      </md-input-container>
+                      <md-input-container flex="flex" class="md-block">
+                        <label>&#1053;&#1086;&#1074;&#1099;&#1081; &#1087;&#1072;&#1088;&#1086;&#1083;&#1100;
+                        </label>
+                        <input type="password" name="3.1.1.3.3.1.4.4.1.3.3.1.1.13.7.9.1.3.3" value="" ng-model="app.passwords.newPassword" sg-no-dirty-check="true" />
+                        <div class="sg-hint">
+                          <ul class="sg-padded">
+                            <li ng-repeat="item in app.passwordPolicy">
+                              {{ item.label }}
+                            </li>
+                          </ul>
+                        </div>
+                      </md-input-container>
+                      <md-input-container flex="flex" class="md-block">
+                        <label>&#1055;&#1086;&#1076;&#1090;&#1074;&#1077;&#1088;&#1078;&#1076;&#1077;&#1085;&#1080;&#1077;
+                        </label>
+                        <input type="password" name="newPasswordConfirmation" value="" ng-model="app.passwords.newPasswordConfirmation" sg-no-dirty-check="true" />
+                        <div ng-messages="loginForm.newPasswordConfirmation.$error">
+                          <div ng-message="newPasswordMismatch">Passwords don't match</div>
+                        </div>
+                      </md-input-container>
+                    </div>
+                    <div layout="row" layout-align="end center">
+                      <md-button ng-disabled="!app.canChangePassword(loginForm)" ng-click="app.changePassword()" type="button">
+                        Change
+                      </md-button>
+                    </div>
+                  </div>
+                </div>
+
+                
+                <div layout-fill="layout-fill" layout-align="center center" layout="row" ng-switch-when="passwordwillexpire">
+                  <div flex-xs="flex-xs" flex-gt-xs="50" layout-align="center center" layout="column">
+                    <md-icon class="md-accent md-hue-1 sg-icon--large">warning</md-icon>
+                    <div ng-if="app.cn" class="md-default-theme md-accent md-hue-1 md-fg md-padding">
+                      &#1044;&#1086;&#1073;&#1088;&#1086; &#1087;&#1086;&#1078;&#1072;&#1083;&#1086;&#1074;&#1072;&#1090;&#1100; {{app.cn}}
+                    </div>
+                    <div class="md-padding" layout-align="start center" layout="row">
+                      <md-icon>priority_high</md-icon>
+                      <div class="md-padding">{{app.errorMessage}}</div>
+                    </div>
+                    <div layout="row" layout-align="end center">
+                      <md-button ng-click="app.loginState = 'passwordexpired'">&#1057;&#1084;&#1077;&#1085;&#1080;&#1090;&#1077; &#1042;&#1072;&#1096; &#1087;&#1072;&#1088;&#1086;&#1083;&#1100;</md-button>
+                      <md-button sg-ripple-click="loginContent" ng-click="app.continueLogin()">Continue</md-button>
+                    </div>
+                  </div>
+                </div>
+
+                
+                
+
+                
+                <div layout-align="center center" layout="column" ng-switch-when="logged">
+                  <md-icon class="md-accent md-hue-1 sg-icon--large">done</md-icon>
+                  <div class="md-default-theme md-accent md-hue-1 md-fg md-padding">
+                    &#1044;&#1086;&#1073;&#1088;&#1086; &#1087;&#1086;&#1078;&#1072;&#1083;&#1086;&#1074;&#1072;&#1090;&#1100; {{app.cn}}
+                  </div>
+                </div>
+
+                <div layout-align="center center" layout="column" ng-switch-when="message">
+                  <md-icon class="md-accent md-hue-1 sg-icon--large">done</md-icon>
+                  <div class="md-default-theme md-accent md-hue-1 md-fg md-padding">
+                    {{app.errorMessage}}
+                  </div>
+                  <md-button sg-ripple-click="loginContent" ng-click="app.continueLogin()">Continue</md-button>
+                </div>
+
+                
+                <div layout-align="center center" layout="column" ng-switch-when="error">
+                  <md-icon class="md-accent md-hue-1 sg-icon--large">error</md-icon>
+                  <div class="md-default-theme md-accent md-hue-1 md-fg md-padding">
+                    {{app.errorMessage}}
+                  </div>
+                  <md-button sg-ripple-click="loginContent" ng-click="app.restoreLogin()">&#1055;&#1086;&#1074;&#1090;&#1086;&#1088;&#1080;&#1090;&#1100;</md-button>
+                </div>
+
+              </sg-ripple-content>
+            </form>
+
+            </div>
+          </div>
+        </div>
+    </md-content>
+    
+  </main>
+
+  <script id="aboutBox.html" type="text/ng-template">
+    <md-dialog flex="50" flex-xs="100">
+      <md-dialog-content class="md-dialog-content">
+        <p><a href="http://sogo.nu/" target="_new">sogo.nu</a></p>
+        <p>Version 5.11.2 (@3228d90dd886 202502160144)</p>
+        <br />
+        <p>Ð Ð°Ð·Ñ€Ð°Ð±Ð¾Ñ‚Ð°Ð½Ð½Ñ‹Ð¹ ÐºÐ¾Ð¼Ð¿Ð°Ð½Ð¸ÑÐ¼Ð¸ Inverse Ð¸ Alinto, SOGo Ð¿Ñ€ÐµÐ´ÑÑ‚Ð°Ð²Ð»ÑÐµÑ‚ ÑÐ¾Ð±Ð¾Ð¹ Ð¿Ð¾Ð»Ð½Ð¾Ñ„ÑƒÐ½ÐºÑ†Ð¸Ð¾Ð½Ð°Ð»ÑŒÐ½Ñ‹Ð¹ ÑÐµÑ€Ð²ÐµÑ€ Ð³Ñ€ÑƒÐ¿Ð¿Ð¾Ð²Ð¾Ð³Ð¾ ÐŸÐž, Ð¾Ñ€Ð¸ÐµÐ½Ñ‚Ð¸Ñ€Ð¾Ð²Ð°Ð½Ð½Ñ‹Ð¹ Ð½Ð° Ð¼Ð°ÑÑˆÑ‚Ð°Ð±Ð¸Ñ€ÑƒÐµÐ¼Ð¾ÑÑ‚ÑŒ Ð¸ Ð¿Ñ€Ð¾ÑÑ‚Ð¾Ñ‚Ñƒ.<br/><br/>
+SOGo Ð¿Ñ€ÐµÐ´Ð¾ÑÑ‚Ð°Ð²Ð»ÑÐµÑ‚ Ð¼Ð¾Ñ‰Ð½Ñ‹Ð¹ Web-Ð¸Ð½Ñ‚ÐµÑ€Ñ„ÐµÐ¹Ñ Ð½Ð° Ð±Ð°Ð·Ðµ AJAX Ð¸ Ð¿Ð¾Ð´Ð´ÐµÑ€Ð¶Ð¸Ð²Ð°ÐµÑ‚ Ð¼Ð½Ð¾Ð¶ÐµÑÑ‚Ð²Ð¾ ÑÐ¾Ð±ÑÑ‚Ð²ÐµÐ½Ð½Ñ‹Ñ… ÐºÐ»Ð¸ÐµÐ½Ñ‚Ð¾Ð² Ð·Ð° ÑÑ‡ÐµÑ‚ Ð¸ÑÐ¿Ð¾Ð»ÑŒÐ·Ð¾Ð²Ð°Ð½Ð¸Ñ ÑÑ‚Ð°Ð½Ð´Ð°Ñ€Ñ‚Ð½Ñ‹Ñ… Ð¿Ñ€Ð¾Ñ‚Ð¾ÐºÐ¾Ð»Ð¾Ð², Ñ‚Ð°ÐºÐ¸Ñ… ÐºÐ°Ðº CalDAV Ð¸ CardDAV.<br/><br/>
+SOGo Ñ€Ð°ÑÐ¿Ñ€Ð¾ÑÑ‚Ñ€Ð°Ð½ÑÐµÑ‚ÑÑ Ð¿Ð¾ Ð»Ð¸Ñ†ÐµÐ½Ð·Ð¸Ð¸ <a href="http://gnu.org/licenses/gpl.html">GNU GPL</a> Ð²ÐµÑ€ÑÐ¸Ð¸ 2 Ð¸Ð»Ð¸ Ð±Ð¾Ð»ÐµÐµ Ð¿Ð¾Ð·Ð´Ð½ÐµÐ¹, Ð° Ð¾Ñ‚Ð´ÐµÐ»ÑŒÐ½Ñ‹Ðµ Ñ‡Ð°ÑÑ‚Ð¸ - Ð¿Ð¾ Ð»Ð¸Ñ†ÐµÐ½Ð·Ð¸Ð¸ GNU LGPL Ð²ÐµÑ€ÑÐ¸Ð¸ 2. Ð­Ñ‚Ð¾ ÑÐ²Ð¾Ð±Ð¾Ð´Ð½Ð¾Ðµ Ð¿Ñ€Ð¾Ð³Ñ€Ð°Ð¼Ð¼Ð½Ð¾Ðµ Ð¾Ð±ÐµÑÐ¿ÐµÑ‡ÐµÐ½Ð¸Ðµ: Ð²Ñ‹ Ð¼Ð¾Ð¶ÐµÑ‚Ðµ ÑÐ²Ð¾Ð±Ð¾Ð´Ð½Ð¾ Ð¸Ð·Ð¼ÐµÐ½ÑÑ‚ÑŒ Ð¸ Ñ€Ð°ÑÐ¿Ñ€Ð¾ÑÑ‚Ñ€Ð°Ð½ÑÑ‚ÑŒ ÐµÐ³Ð¾. Ð“ÐÐ ÐÐÐ¢Ð˜Ð˜ ÐÐ• ÐŸÐ Ð•Ð”ÐžÐ¡Ð¢ÐÐ’Ð›Ð¯Ð®Ð¢Ð¡Ð¯, Ð² Ð¿Ñ€ÐµÐ´ÐµÐ»Ð°Ñ…, Ñ€Ð°Ð·Ñ€ÐµÑˆÐµÐ½Ð½Ñ‹Ñ… Ð·Ð°ÐºÐ¾Ð½Ð¾Ð´Ð°Ñ‚ÐµÐ»ÑŒÑÑ‚Ð²Ð¾Ð¼.<br/><br/>
+Ð Ð°Ð·Ð»Ð¸Ñ‡Ð½Ñ‹Ðµ Ð²Ð°Ñ€Ð¸Ð°Ð½Ñ‚Ñ‹ Ð¿Ð¾Ð´Ð´ÐµÑ€Ð¶ÐºÐ¸ ÑÐ¼. Ð½Ð° <a href="http://www.sogo.nu/en/support/community.html">ÑÑ‚Ð¾Ð¹ ÑÑ‚Ñ€Ð°Ð½Ð¸Ñ†Ðµ</a>.</p>
+        
+      </md-dialog-content>
+      <md-dialog-actions>
+        <md-button ng-click="about.closeDialog()">&#1047;&#1072;&#1082;&#1088;&#1099;&#1090;&#1100;</md-button>
+      </md-dialog-actions>
+    </md-dialog>
+  </script>
+
+
+          
+          <script type="text/javascript">
+            var ApplicationBaseURL = '/SOGo/so/';
+            var ResourcesURL = '/SOGo.woa/WebServerResources';
+            var minimumSearchLength = 2;
+            var minimumSearchLengthLabel = '&#1042;&#1074;&#1077;&#1076;&#1080;&#1090;&#1077; &#1085;&#1077; &#1084;&#1077;&#1085;&#1077;&#1077; 2 &#1089;&#1080;&#1084;&#1074;&#1086;&#1083;&#1086;&#1074;';
+            
+            
+              var DebugEnabled = false;
+            
+            
+            
+              var IsSuperUser = false;
+            
+            
+            
+              var usesCASAuthentication = false;
+            
+            
+            
+              var usesSAML2Authentication = false;
+            
+            
+
+            // This is the equivalent of an AJAX call to /SOGo/so/_UserLogin_/date
+            var currentDay = {"year":"2025","weekday":"Thursday","secondsBeforeTomorrow":66354,"abbr":{"month":"Apr","weekday":"Thu"},"day":"03","month":"April"};
+
+            var clabels = {"Address Book":"ÐÐ´Ñ€ÐµÑÐ½Ð°Ñ ÐºÐ½Ð¸Ð³Ð°","Issuer":"Ð˜Ð·Ð´Ð°Ñ‚ÐµÐ»ÑŒ","delegate is organizer":"Ð­Ñ‚Ð¾ Ð¾Ñ€Ð³Ð°Ð½Ð¸Ð·Ð°Ñ‚Ð¾Ñ€. Ð’Ñ‹Ð±ÐµÑ€Ð¸Ñ‚Ðµ Ð´Ñ€ÑƒÐ³Ð¾Ð³Ð¾ Ð¿Ñ€Ð¸Ð³Ð»Ð°ÑˆÐ°ÐµÐ¼Ð¾Ð³Ð¾.","Success":"Ð£ÑÐ¿ÐµÑ…","You cannot (un)subscribe to a folder that you own!":"Ð’Ñ‹ Ð½Ðµ Ð¼Ð¾Ð¶ÐµÑ‚Ðµ Ð¿Ð¾Ð´Ð¿Ð¸ÑÐ°Ñ‚ÑŒÑÑ Ð¸Ð»Ð¸ Ð¾Ñ‚Ð¿Ð¸ÑÐ°Ñ‚ÑŒÑÑ Ð¾Ñ‚ ÑÐ¾Ð±ÑÑ‚Ð²ÐµÐ½Ð½Ð¾Ð¹ Ð¿Ð°Ð¿ÐºÐ¸.","Potentially anyone on the Internet will be able to access your calendar \"%{0}\", even if they do not have an account on this system. Is this information suitable for the public Internet?":"Ð’ÐµÑ€Ð¾ÑÑ‚Ð½ÐµÐµ Ð²ÑÐµÐ³Ð¾, Ð»ÑŽÐ±Ñ‹Ðµ Ð¿Ð¾Ð»ÑŒÐ·Ð¾Ð²Ð°Ñ‚ÐµÐ»Ð¸ Ð˜Ð½Ñ‚ÐµÑ€Ð½ÐµÑ‚Ð° ÑÐ¼Ð¾Ð¶ÐµÑ‚ Ð¿Ð¾Ð»ÑƒÑ‡Ð¸Ñ‚ÑŒ Ð´Ð¾ÑÑ‚ÑƒÐ¿ Ðº Ð²Ð°ÑˆÐµÐ¼Ñƒ ÐºÐ°Ð»ÐµÐ½Ð´Ð°Ñ€ÑŽ \"%{0}\", Ð´Ð°Ð¶Ðµ ÐµÑÐ»Ð¸ Ð¾Ð½Ð¸ Ð½Ðµ Ð·Ð°Ñ€ÐµÐ³Ð¸ÑÑ‚Ñ€Ð¸Ñ€Ð¾Ð²Ð°Ð½Ñ‹ Ð² ÑÑ‚Ð¾Ð¹ ÑÐ¸ÑÑ‚ÐµÐ¼Ðµ. Ð”ÐµÐ¹ÑÑ‚Ð²Ð¸Ñ‚ÐµÐ»ÑŒÐ½Ð¾ Ð»Ð¸ ÑÑ‚Ð° Ð¸Ð½Ñ„Ð¾Ñ€Ð¼Ð°Ñ†Ð¸Ñ Ð¼Ð¾Ð¶ÐµÑ‚ Ð±Ñ‹Ñ‚ÑŒ Ð´Ð¾ÑÑ‚ÑƒÐ¿Ð½Ð° Ð´Ð»Ñ Ð²ÑÐµÐ³Ð¾ Ð˜Ð½Ñ‚ÐµÑ€Ð½ÐµÑ‚Ð°?","July":"Ð˜ÑŽÐ»ÑŒ","Loading":"Ð—Ð°Ð³Ñ€ÑƒÐ¶Ð°ÐµÑ‚ÑÑ","You cannot create a list in a shared address book.":"Ð’Ñ‹ Ð½Ðµ Ð¼Ð¾Ð¶ÐµÑ‚Ðµ ÑÐ¾Ð·Ð´Ð°Ñ‚ÑŒ ÑÐ¿Ð¸ÑÐ¾Ðº Ð² Ñ€Ð°Ð·Ð´ÐµÐ»ÑÐµÐ¼Ð¾Ð¹ Ð°Ð´Ñ€ÐµÑÐ½Ð¾Ð¹ ÐºÐ½Ð¸Ð³Ðµ.","passwordRecovery_SecretQuestion3":"ÐšÐ°ÐºÐ¾Ð¹ Ð²Ð°Ñˆ Ð»ÑŽÐ±Ð¸Ð¼Ñ‹Ð¹ Ñ„Ð¸Ð»ÑŒÐ¼?","Vacation message is enabled":"Ð¡Ð¾Ð¾Ð±Ñ‰ÐµÐ½Ð¸Ðµ Ð¾Ð± Ð¾Ñ‚Ð¿ÑƒÑÐºÐµ Ð²ÐºÐ»ÑŽÑ‡ÐµÐ½Ð¾","emailAddress":"ÐÐ´Ñ€ÐµÑ ÑÐ»ÐµÐºÑ‚Ñ€Ð¾Ð½Ð½Ð¾Ð¹ Ð¿Ð¾Ñ‡Ñ‚Ñ‹","Snooze":"ÐžÑ‚Ð»Ð¾Ð¶Ð¸Ñ‚ÑŒ","a2_Monday":"ÐŸÐ½","passwordRecovery_SecondaryEmail":"Ð”Ð¾Ð¿Ð¾Ð»Ð½Ð¸Ñ‚ÐµÐ»ÑŒÐ½Ñ‹Ð¹ Ð°Ð´Ñ€ÐµÑ ÑÐ»ÐµÐºÑ‚Ñ€Ð¾Ð½Ð½Ð¾Ð¹ Ð¿Ð¾Ñ‡Ñ‚Ñ‹","key_delete":"ÑƒÐ´Ð°Ð»Ð¸Ñ‚ÑŒ","Unable to unsubscribe from that folder!":"ÐÐµÐ²Ð¾Ð·Ð¼Ð¾Ð¶Ð½Ð¾ Ð¿Ñ€ÐµÐºÑ€Ð°Ñ‚Ð¸Ñ‚ÑŒ Ð¿Ð¾Ð´Ð¿Ð¸ÑÐºÑƒ Ð½Ð° ÑÑ‚Ñƒ Ð¿Ð°Ð¿ÐºÑƒ!","10 minutes":"10 Ð¼Ð¸Ð½ÑƒÑ‚","key_left":"â†","Any Authenticated User":"Ð›ÑŽÐ±Ð¾Ð¹ Ð°ÑƒÑ‚ÐµÐ½Ñ‚Ð¸Ñ„Ð¸Ñ†Ð¸Ñ€Ð¾Ð²Ð°Ð½Ð½Ñ‹Ð¹ Ð¿Ð¾Ð»ÑŒÐ·Ð¾Ð²Ð°Ñ‚ÐµÐ»ÑŒ","View next item":"ÐŸÑ€Ð¾ÑÐ¼Ð¾Ñ‚Ñ€ÐµÑ‚ÑŒ ÑÐ»ÐµÐ´ÑƒÑŽÑ‰Ð¸Ð¹ ÑÐ»ÐµÐ¼ÐµÐ½Ñ‚","February":"Ð¤ÐµÐ²Ñ€Ð°Ð»ÑŒ","45 minutes":"45 Ð¼Ð¸Ð½ÑƒÑ‚","S/MIME Certificate":"Ð¡ÐµÑ€Ñ‚Ð¸Ñ„Ð¸ÐºÐ°Ñ‚ S/MIME","Unable to subscribe to that folder!":"ÐÐµÐ²Ð¾Ð·Ð¼Ð¾Ð¶Ð½Ð¾ Ð¿Ð¾Ð´Ð¿Ð¸ÑÐ°Ñ‚ÑŒÑÑ Ð½Ð° ÑÑ‚Ñƒ Ð¿Ð°Ð¿ÐºÑƒ!","Move forward":"ÐŸÐµÑ€ÐµÐ´Ð²Ð¸Ð½ÑƒÑ‚ÑŒ Ð²Ð¿ÐµÑ€ÐµÐ´","key_shift+space":"Shift + ÐŸÑ€Ð¾Ð±ÐµÐ»","A folder by that name already exists.":"ÐŸÐ°Ð¿ÐºÐ° Ñ ÑÑ‚Ð¸Ð¼ Ð¸Ð¼ÐµÐ½ÐµÐ¼ ÑƒÐ¶Ðµ ÑÑƒÑ‰ÐµÑÑ‚Ð²ÑƒÐµÑ‚.","noJavascriptError":"SOGo Ñ‚Ñ€ÐµÐ±ÑƒÐµÑ‚ Ñ€Ð°Ð±Ð¾Ñ‚Ñ‹ Javascript. ÐŸÐ¾Ð¶Ð°Ð»ÑƒÐ¹ÑÑ‚Ð°, Ð²ÐºÐ»ÑŽÑ‡Ð¸Ñ‚Ðµ ÐµÐ³Ð¾ Ð² Ð¾Ð¿Ñ†Ð¸ÑÑ… Ð±Ñ€Ð°ÑƒÐ·ÐµÑ€Ð°.","Snooze for ":"ÐžÑ‚Ð»Ð¾Ð¶Ð¸Ñ‚ÑŒ Ð½Ð°","September":"Ð¡ÐµÐ½Ñ‚ÑÐ±Ñ€ÑŒ","You are not allowed to access this module or this system. Please contact your system administrator.":"Ð’Ð°Ð¼ Ð½Ðµ Ð¿Ñ€ÐµÐ´Ð¾ÑÑ‚Ð°Ð²Ð»ÐµÐ½Ð¾ Ð¿Ñ€Ð°Ð²Ð¾ Ð´Ð¾ÑÑ‚ÑƒÐ¿Ð° Ðº ÑÑ‚Ð¾Ð¼Ñƒ Ð¼Ð¾Ð´ÑƒÐ»ÑŽ/ÑÐ¸ÑÑ‚ÐµÐ¼Ðµ. ÐŸÐ¾Ð¶Ð°Ð»ÑƒÐ¹ÑÑ‚Ð°, ÑÐ²ÑÐ¶Ð¸Ñ‚ÐµÑÑŒ Ñ Ð°Ð´Ð¼Ð¸Ð½Ð¸ÑÑ‚Ñ€Ð°Ñ‚Ð¾Ñ€Ð¾Ð¼.","Sep":"Ð¡ÐµÐ½","December":"Ð”ÐµÐºÐ°Ð±Ñ€ÑŒ","5 minutes":"5 Ð¼Ð¸Ð½ÑƒÑ‚","Home":"ÐÐ°Ñ‡Ð°Ð»Ð¾","You have already subscribed to that folder!":"Ð’Ñ‹ ÑƒÐ¶Ðµ Ð¿Ð¾Ð´Ð¿Ð¸ÑÐ°Ð»Ð¸ÑÑŒ Ð½Ð° ÑÑ‚Ñƒ Ð¿Ð°Ð¿ÐºÑƒ!","noEmailForDelegation":"Ð’Ñ‹ Ð´Ð¾Ð»Ð¶Ð½Ñ‹ ÑƒÐºÐ°Ð·Ð°Ñ‚ÑŒ Ð°Ð´Ñ€ÐµÑ e-mail, Ð½Ð° ÐºÐ¾Ñ‚Ð¾Ñ€Ñ‹Ð¹ Ð²Ñ‹ Ñ…Ð¾Ñ‚Ð¸Ñ‚Ðµ Ð´ÐµÐ»ÐµÐ³Ð¸Ñ€Ð¾Ð²Ð°Ñ‚ÑŒ Ð¿Ñ€Ð¸Ð³Ð»Ð°ÑˆÐµÐ½Ð¸Ðµ.","Apr":"ÐÐ¿Ñ€","June":"Ð˜ÑŽÐ½ÑŒ","Expand":"Ð Ð°Ð·Ð²ÐµÑ€Ð½ÑƒÑ‚ÑŒ","30 minutes":"30 Ð¼Ð¸Ð½ÑƒÑ‚","1 day":"1 Ð´ÐµÐ½ÑŒ","Calendar":"ÐšÐ°Ð»ÐµÐ½Ð´Ð°Ñ€ÑŒ","key_right":"â†’","a2_Sunday":"Ð’Ñ","Work":"Ð Ð°Ð±Ð¾Ñ‚Ð°","givenName":"Ð˜Ð¼Ñ","Help":"ÐŸÐ¾Ð¼Ð¾Ñ‰ÑŒ","Mail":"ÐŸÐ¾Ñ‡Ñ‚Ð°","AM":"AM","Public Access":"ÐŸÑƒÐ±Ð»Ð¸Ñ‡Ð½Ñ‹Ð¹ Ð´Ð¾ÑÑ‚ÑƒÐ¿","Give Access":"ÐŸÑ€ÐµÐ´Ð¾ÑÑ‚Ð°Ð²Ð¸Ñ‚ÑŒ Ð´Ð¾ÑÑ‚ÑƒÐ¿","Can't contact server":"ÐŸÑ€Ð¾Ð¸Ð·Ð¾ÑˆÐ»Ð° Ð¾ÑˆÐ¸Ð±ÐºÐ° Ð¿Ñ€Ð¸ Ð¾Ð±Ñ€Ð°Ñ‰ÐµÐ½Ð¸Ð¸ Ðº ÑÐµÑ€Ð²ÐµÑ€Ñƒ. ÐŸÐ¾Ð¶Ð°Ð»ÑƒÐ¹ÑÑ‚Ð°, Ð¿Ð¾Ð²Ñ‚Ð¾Ñ€Ð¸Ñ‚Ðµ Ð¿Ð¾Ð¿Ñ‹Ñ‚ÐºÑƒ Ð¿Ð¾Ð·Ð¶Ðµ.","key_down":"â†“","File size upload limit reached":"Ð”Ð¾ÑÑ‚Ð¸Ð³Ð½ÑƒÑ‚Ð¾ Ð¾Ð³Ñ€Ð°Ð½Ð¸Ñ‡ÐµÐ½Ð¸Ðµ Ð½Ð° Ñ€Ð°Ð·Ð¼ÐµÑ€ Ð·Ð°Ð³Ñ€ÑƒÐ¶Ð°ÐµÐ¼Ð¾Ð³Ð¾ Ñ„Ð°Ð¹Ð»Ð°","May":"ÐœÐ°Ð¹","Refresh":"ÐžÐ±Ð½Ð¾Ð²Ð¸Ñ‚ÑŒ","Toggle item":"Ð¡Ð¼ÐµÐ½Ð¸Ñ‚ÑŒ Ð²Ñ‹Ð´ÐµÐ»ÐµÐ½Ð¸Ðµ","Dec":"Ð”ÐµÐº","streetAddress":"Ð£Ð»Ð¸Ñ†Ð°","Toggle visibility":"ÐŸÐµÑ€ÐµÐºÐ»ÑŽÑ‡Ð¸Ñ‚ÑŒ Ð²Ð¸Ð´Ð¸Ð¼Ð¾ÑÑ‚ÑŒ","Confirmation":"ÐŸÐ¾Ð´Ñ‚Ð²ÐµÑ€Ð¶Ð´ÐµÐ½Ð¸Ðµ","organizationalUnitName":"ÐžÑ€Ð³Ð°Ð½Ð¸Ð·Ð°Ñ†Ð¸Ð¾Ð½Ð½Ð¾Ðµ Ð¿Ð¾Ð´Ñ€Ð°Ð·Ð´ÐµÐ»ÐµÐ½Ð¸Ðµ","User":"ÐŸÐ¾Ð»ÑŒÐ·Ð¾Ð²Ð°Ñ‚ÐµÐ»ÑŒ","Personal":"Ð›Ð¸Ñ‡Ð½Ð¾Ðµ","You don't have the required privileges to perform the operation.":"Ð£ Ð’Ð°Ñ Ð½ÐµÑ‚ Ð¿Ñ€Ð°Ð²Ð° Ð¿Ñ€Ð¾Ð¸Ð·Ð²Ð¾Ð´Ð¸Ñ‚ÑŒ ÑÑ‚Ñƒ Ð¾Ð¿ÐµÑ€Ð°Ñ†Ð¸ÑŽ.","Oct":"ÐžÐºÑ‚","Right Administration":"Ð£Ð¿Ñ€Ð°Ð²Ð»ÐµÐ½Ð¸Ðµ Ð´Ð¾ÑÑ‚ÑƒÐ¿Ð¾Ð¼","Any user with an account on this system will be able to access your mailbox \"%{0}\". Are you certain you trust them all?":"Ð›ÑŽÐ±Ð¾Ð¹ Ð¿Ð¾Ð»ÑŒÐ·Ð¾Ð²Ð°Ñ‚ÐµÐ»ÑŒ Ð´Ð°Ð½Ð½Ð¾Ð¹ ÑÐ¸ÑÑ‚ÐµÐ¼Ñ‹ Ð¿Ð¾Ð»ÑƒÑ‡Ð¸Ñ‚ Ð´Ð¾ÑÑ‚ÑƒÐ¿ Ðº Ð²Ð°ÑˆÐµÐ¼Ñƒ Ð¿Ð¾Ñ‡Ñ‚Ð¾Ð²Ð¾Ð¼Ñƒ ÑÑ‰Ð¸ÐºÑƒ \"%{0}\". Ð’Ñ‹ ÑƒÐ²ÐµÑ€ÐµÐ½Ñ‹ Ñ‡Ñ‚Ð¾ Ð´Ð¾Ð²ÐµÑ€ÑÐµÑ‚Ðµ Ð¸Ð¼ Ð²ÑÐµÐ¼?","Any user with an account on this system will be able to access your address book \"%{0}\". Are you certain you trust them all?":"Ð›ÑŽÐ±Ð¾Ð¹ Ð¿Ð¾Ð»ÑŒÐ·Ð¾Ð²Ð°Ñ‚ÐµÐ»ÑŒ ÑÐ´Ð°Ð½Ð½Ð¾Ð¹ Ñ‚Ð¾Ð¹ ÑÐ¸ÑÑ‚ÐµÐ¼Ñ‹ Ð¼Ð¾Ð¶ÐµÑ‚ Ñ‡Ð¸Ñ‚Ð°Ñ‚ÑŒ Ð²Ð°ÑˆÑƒ Ð°Ð´Ñ€ÐµÑÐ½ÑƒÑŽ ÐºÐ½Ð¸Ð³Ñƒ \"%{0}\". Ð’Ñ‹ ÑƒÐ²ÐµÑ€ÐµÐ½Ñ‹ Ñ‡Ñ‚Ð¾ Ð´Ð¾Ð²ÐµÑ€ÑÐµÑ‚Ðµ Ð¸Ð¼ Ð²ÑÐµÐ¼?","organizationName":"ÐžÑ€Ð³Ð°Ð½Ð¸Ð·Ð°Ñ†Ð¸Ñ","Jul":"Ð˜ÑŽÐ»","Save":"Ð¡Ð¾Ñ…Ñ€Ð°Ð½Ð¸Ñ‚ÑŒ","a2_Wednesday":"Ð¡Ñ€","Yes":"Ð”Ð°","Toggle Menu":"ÐŸÐµÑ€ÐµÐºÐ»ÑŽÑ‡Ð¸Ñ‚ÑŒ Ð¼ÐµÐ½ÑŽ","Wrong username or password.":"ÐÐµÐ¿Ñ€Ð°Ð²Ð¸Ð»ÑŒÐ½Ñ‹Ð¹ Ð»Ð¾Ð³Ð¸Ð½ Ð¸Ð»Ð¸ Ð¿Ð°Ñ€Ð¾Ð»ÑŒ.","Password":"ÐŸÐ°Ñ€Ð¾Ð»ÑŒ","Administration":"ÐÐ´Ð¼Ð¸Ð½Ð¸ÑÑ‚Ñ€Ð¸Ñ€Ð¾Ð²Ð°Ð½Ð¸Ðµ","The user rights cannot be edited for this object!":"Ð˜Ð·Ð²Ð¸Ð½Ð¸Ñ‚Ðµ, Ð´Ð»Ñ Ð´Ð°Ð½Ð½Ð¾Ð³Ð¾ Ð¾Ð±ÑŠÐµÐºÑ‚Ð° Ð½ÐµÐ²Ð¾Ð·Ð¼Ð¾Ð¶Ð½Ð¾ Ð½Ð°ÑÑ‚Ñ€Ð¾Ð¸Ñ‚ÑŒ Ð¿Ñ€Ð°Ð²Ð° Ð´Ð¾ÑÑ‚ÑƒÐ¿Ð°!","Add...":"Ð”Ð¾Ð±Ð°Ð²Ð¸Ñ‚ÑŒ...","Add previous item to selection":"Ð”Ð¾Ð±Ð°Ð²Ð¸Ñ‚ÑŒ Ð¿Ñ€ÐµÐ´Ñ‹Ð´ÑƒÑ‰Ð¸Ð¹ ÑÐ»ÐµÐ¼ÐµÐ½Ñ‚ Ðº Ð²Ñ‹Ð´ÐµÐ»ÐµÐ½Ð¸ÑŽ","Later":"ÐŸÐ¾Ð·Ð¶Ðµ","Return Receipt Sent":"Ð£Ð²ÐµÐ´Ð¾Ð¼Ð»ÐµÐ½Ð¸Ðµ Ð¾ Ð²Ñ€ÑƒÑ‡ÐµÐ½Ð¸Ð¸ Ð¾Ñ‚Ð¿Ñ€Ð°Ð²Ð»ÐµÐ½Ð¾","Start":"ÐÐ°Ñ‡Ð°Ð»Ð¾","Move backward":"ÐŸÐµÑ€ÐµÐ´Ð²Ð¸Ð½ÑƒÑ‚ÑŒ Ð½Ð°Ð·Ð°Ð´","Reduce":"Ð£Ð¼ÐµÐ½ÑŒÑˆÐ¸Ñ‚ÑŒ","Error":"ÐžÑˆÐ¸Ð±ÐºÐ°","passwordRecovery_Disabled":"ÐžÑ‚ÐºÐ»ÑŽÑ‡ÐµÐ½Ð¾","Preferences":"ÐÐ°ÑÑ‚Ñ€Ð¾Ð¹ÐºÐ¸","View previous item":"ÐŸÑ€Ð¾ÑÐ¼Ð¾Ñ‚Ñ€ÐµÑ‚ÑŒ Ð¿Ñ€ÐµÐ´Ñ‹Ð´ÑƒÑ‰Ð¸Ð¹ ÑÐ»ÐµÐ¼ÐµÐ½Ñ‚","Anybody accessing this resource from the public area":"Ð›ÑŽÐ±Ð¾Ð¹, Ð¸ÑÐ¿Ð¾Ð»ÑŒÐ·ÑƒÑŽÑ‰Ð¸Ð¹ ÑÑ‚Ð¾Ñ‚ Ñ€ÐµÑÑƒÑ€Ñ Ð¸Ð· Ð¿ÑƒÐ±Ð»Ð¸Ñ‡Ð½Ð¾Ð³Ð¾ Ð¼ÐµÑÑ‚Ð°","OK":"OK","a2_Friday":"ÐŸÑ‚","delegate is a participant":"ÐŸÑ€Ð¸Ð³Ð»Ð°ÑˆÐ°ÐµÐ¼Ñ‹Ð¹ ÑƒÐ¶Ðµ ÑƒÑ‡Ð°ÑÑ‚Ð½Ð¸Ðº.","Feb":"Ð¤ÐµÐ²","Owner":"Ð’Ð»Ð°Ð´ÐµÐ»ÐµÑ†","a2_Saturday":"Ð¡Ð±","passwordRecovery_SecretQuestion1":"ÐšÐ°Ðº Ð·Ð²Ð°Ð»Ð¸ Ð²Ð°ÑˆÐµ Ð¿ÐµÑ€Ð²Ð¾Ðµ Ð´Ð¾Ð¼Ð°ÑˆÐ½ÐµÐµ Ð¶Ð¸Ð²Ð¾Ñ‚Ð½Ð¾Ðµ?","key_shift+down":"shift + â†“","1 hour":"1 Ñ‡Ð°Ñ","Remove":"Ð£Ð´Ð°Ð»Ð¸Ñ‚ÑŒ","Subscribe User":"ÐŸÐ¾Ð´Ð¿Ð¸ÑÐ°Ñ‚ÑŒ Ð¿Ð¾Ð»ÑŒÐ·Ð¾Ð²Ð°Ñ‚ÐµÐ»Ñ","Subject Name":"Ð¡ÑƒÐ±ÑŠÐµÐºÑ‚","Nov":"ÐÐ¾Ñ","key_up":"â†‘","Any user not listed above":"Ð›ÑŽÐ±Ð¾Ð¹ Ð¿Ð¾Ð»ÑŒÐ·Ð¾Ð²Ð°Ñ‚ÐµÐ»ÑŒ Ð½Ðµ ÑƒÐºÐ°Ð·Ð°Ð½Ð½Ñ‹Ð¹ Ð²Ñ‹ÑˆÐµ","passwordRecovery_SecretQuestion":"Ð¡ÐµÐºÑ€ÐµÑ‚Ð½Ñ‹Ð¹ Ð²Ð¾Ð¿Ñ€Ð¾Ñ","commonName":"ÐŸÐ¾Ð½ÑÑ‚Ð½Ð¾Ðµ Ð¸Ð¼Ñ","a2_Thursday":"Ð§Ñ‚","Keyboard Shortcuts":"Ð“Ð¾Ñ€ÑÑ‡Ð¸Ðµ ÐºÐ»Ð°Ð²Ð¸ÑˆÐ¸","Reminder":"ÐÐ°Ð¿Ð¾Ð¼Ð¸Ð½Ð°Ð½Ð¸Ðµ","stateOrProvinceName":"Ð¨Ñ‚Ð°Ñ‚ Ð¸Ð»Ð¸ Ð¾Ð±Ð»Ð°ÑÑ‚ÑŒ","Access Rights":"ÐŸÑ€Ð°Ð²Ð° Ð´Ð¾ÑÑ‚ÑƒÐ¿Ð°","Mar":"ÐœÐ°Ñ€","No such user.":"ÐÐµÑ‚ Ñ‚Ð°ÐºÐ¾Ð³Ð¾ Ð¿Ð¾Ð»ÑŒÐ·Ð¾Ð²Ð°Ñ‚ÐµÐ»Ñ","a2_Tuesday":"Ð’Ñ‚","Edit User Rights":"Ð ÐµÐ´Ð°ÐºÑ‚Ð¸Ñ€Ð¾Ð²Ð°Ñ‚ÑŒ Ð¿Ñ€Ð°Ð²Ð° Ð¿Ð¾Ð»ÑŒÐ·Ð¾Ð²Ð°Ñ‚ÐµÐ»ÐµÐ¹","March":"ÐœÐ°Ñ€Ñ‚","Potentially anyone on the Internet will be able to access your address book \"%{0}\", even if they do not have an account on this system. Is this information suitable for the public Internet?":"ÐŸÐ¾Ñ‚ÐµÐ½Ñ†Ð¸Ð°Ð»ÑŒÐ½Ð¾ Ð»ÑŽÐ±Ð¾Ð¹ Ð¿Ð¾Ð»ÑŒÐ·Ð¾Ð²Ð°Ñ‚ÐµÐ»ÑŒ Ð¸Ð½Ñ‚ÐµÑ€Ð½ÐµÑ‚Ð° ÑÐ¼Ð¾Ð´ÐµÑ‚ Ð¿Ñ€Ð¾Ñ‡Ð¸Ñ‚Ð°Ñ‚ÑŒ Ð²Ð°ÑˆÑƒ Ð°Ð´Ñ€ÐµÑÐ½ÑƒÑŽ ÐºÐ½Ð¸Ð³Ñƒ \"%{0}\", Ð´Ð°Ð¶Ðµ ÐµÑÐ»Ð¸ Ð¾Ð½Ð¸ Ð½Ðµ Ð·Ð°Ñ€ÐµÐ³Ð¸ÑÑ‚Ñ€Ð¸Ñ€Ð¾Ð²Ð°Ð½Ñ‹ Ð² Ð´Ð°Ð½Ð½Ð¾Ð¹ ÑÐ¸ÑÑ‚ÐµÐ¼Ðµ. Ð˜Ð½Ñ„Ð¾Ñ€Ð¼Ð°Ñ†Ð¸Ñ Ð² ÑÑ‚Ð¾Ð¹ Ð°Ð´Ñ€ÐµÑÐ½Ð¾Ð¹ ÐºÐ½Ð¸Ð³Ðµ Ð¼Ð¾Ð¶ÐµÑ‚ Ð±Ñ‹Ñ‚ÑŒ Ð²Ñ‹ÑÑ‚Ð°Ð²Ð»ÐµÐ½Ð° Ð² Ð¿ÑƒÐ±Ð»Ð¸Ñ‡Ð½ÑƒÑŽ ÑÐµÑ‚ÑŒ?","April":"ÐÐ¿Ñ€ÐµÐ»ÑŒ","Show or hide this help":"ÐŸÐ¾ÐºÐ°Ð·Ð°Ñ‚ÑŒ Ð¸Ð»Ð¸ ÑÐºÑ€Ñ‹Ñ‚ÑŒ Ð¿Ð¾Ð´ÑÐºÐ°Ð·ÐºÑƒ","November":"ÐÐ¾ÑÐ±Ñ€ÑŒ","key_shift+up":"shift + â†‘","October":"ÐžÐºÑ‚ÑÐ±Ñ€ÑŒ","You cannot subscribe to a folder that you own!":"Ð’Ñ‹ Ð½Ðµ Ð¼Ð¾Ð¶ÐµÑ‚Ðµ Ð¿Ð¾Ð´Ð¿Ð¸ÑÑ‹Ð²Ð°Ñ‚ÑŒÑÑ Ð½Ð° ÑÐ¾Ð±ÑÑ‚Ð²ÐµÐ½Ð½ÑƒÑŽ Ð¿Ð°Ð¿ÐºÑƒ!","localityName":"ÐÐ°ÑÐµÐ»ÐµÐ½Ð½Ñ‹Ð¹ Ð¿ÑƒÐ½ÐºÑ‚","Sorry, the user rights can not be configured for that object.":"Ð˜Ð·Ð²Ð¸Ð½Ð¸Ñ‚Ðµ, Ð´Ð»Ñ Ð´Ð°Ð½Ð½Ð¾Ð³Ð¾ Ð¾Ð±ÑŠÐµÐºÑ‚Ð° Ð½ÐµÐ²Ð¾Ð·Ð¼Ð¾Ð¶Ð½Ð¾ Ð½Ð°ÑÑ‚Ñ€Ð¾Ð¸Ñ‚ÑŒ Ð¿Ñ€Ð°Ð²Ð° Ð´Ð¾ÑÑ‚ÑƒÐ¿Ð°.","key_backspace":"âŒ«","Username":"Ð›Ð¾Ð³Ð¸Ð½","Enter at least %{minimumSearchLength} characters":"Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð½Ðµ Ð¼ÐµÐ½ÐµÐµ %{minimumSearchLength} ÑÐ¸Ð¼Ð²Ð¾Ð»Ð¾Ð²","January":"Ð¯Ð½Ð²Ð°Ñ€ÑŒ","Forwarded":"ÐŸÐµÑ€ÐµÐ½Ð°Ð¿Ñ€Ð°Ð²Ð»ÐµÐ½Ð¾","Toggle range of items":"Ð¡Ð¼ÐµÐ½Ð¸Ñ‚ÑŒ ÑÐ¾ÑÑ‚Ð¾ÑÐ½Ð¸Ðµ Ð½ÐµÑÐºÐ¾Ð»ÑŒÐºÐ¸Ñ… ÑÐ»ÐµÐ¼ÐµÐ½Ñ‚Ð¾Ð²","Jun":"Ð˜ÑŽÐ½","August":"ÐÐ²Ð³ÑƒÑÑ‚","Add next item to selection":"Ð”Ð¾Ð±Ð°Ð²Ð¸Ñ‚ÑŒ ÑÐ»ÐµÐ´ÑƒÑŽÑ‰Ð¸Ð¹ ÑÐ»ÐµÐ¼ÐµÐ½Ñ‚ Ðº Ð²Ñ‹Ð´ÐµÐ»ÐµÐ½Ð¸ÑŽ","key_space":"space","passwordRecovery_SecretQuestion2":"ÐšÐ°ÐºÐ¾Ð¹ Ð±Ñ‹Ð»Ð° Ð²Ð°ÑˆÐ° Ð¿ÐµÑ€Ð²Ð°Ñ Ð¼Ð°ÑˆÐ¸Ð½Ð°?","countryName":"Ð¡Ñ‚Ñ€Ð°Ð½Ð°","hotkey_search":"s","PM":"PM","Aug":"ÐÐ²Ð³","delegate is a group":"Ð£ÐºÐ°Ð·Ð°Ð½Ð½Ñ‹Ð¹ Ð°Ð´Ñ€ÐµÑ - Ð°Ð´Ñ€ÐµÑ Ð³Ñ€ÑƒÐ¿Ð¿Ñ‹. Ð’Ñ‹ Ð¼Ð¾Ð¶ÐµÑ‚Ðµ Ð´ÐµÐ»ÐµÐ³Ð¸Ñ€Ð¾Ð²Ð°Ñ‚ÑŒ Ð¿Ñ€Ð¸Ð³Ð»Ð°ÑˆÐµÐ½Ð¸Ðµ Ð»Ð¸ÑˆÑŒ Ð¾Ñ‚Ð´ÐµÐ»ÑŒÐ½Ñ‹Ð¼ Ð»ÑŽÐ´ÑÐ¼.","Open Calendar":"ÐžÑ‚ÐºÑ€Ñ‹Ñ‚ÑŒ ÐºÐ°Ð»ÐµÐ½Ð´Ð°Ñ€ÑŒ","Cancel":"ÐžÑ‚Ð¼ÐµÐ½Ð°","surname":"Ð¤Ð°Ð¼Ð¸Ð»Ð¸Ñ","Disconnect":"Ð’Ñ‹Ñ…Ð¾Ð´","You cannot unsubscribe from a folder that you own!":"Ð’Ñ‹ Ð½Ðµ Ð¼Ð¾Ð¶ÐµÑ‚Ðµ Ð¿Ñ€ÐµÐºÑ€Ð°Ñ‚Ð¸Ñ‚ÑŒ Ð¿Ð¾Ð´Ð¿Ð¸ÑÐºÑƒ Ð½Ð° ÑÐ¾Ð±ÑÑ‚Ð²ÐµÐ½Ð½ÑƒÑŽ Ð¿Ð°Ð¿ÐºÑƒ!","To Do":"Ðš Ð¸ÑÐ¿Ð¾Ð»Ð½ÐµÐ½Ð¸ÑŽ","Due Date":"Ð”Ð°Ñ‚Ð° Ð½Ð°Ñ‡Ð°Ð»Ð°","Add User":"Ð”Ð¾Ð±Ð°Ð²Ð¸Ñ‚ÑŒ Ð¿Ð¾Ð»ÑŒÐ·Ð¾Ð²Ð°Ñ‚ÐµÐ»Ñ","Important":"Ð’Ð°Ð¶Ð½Ð¾","No":"ÐÐµÑ‚","15 minutes":"15 Ð¼Ð¸Ð½ÑƒÑ‚","Warning":"ÐŸÑ€ÐµÐ´ÑƒÐ¿Ñ€ÐµÐ¶Ð´ÐµÐ½Ð¸Ðµ","Any user with an account on this system will be able to access your calendar \"%{0}\". Are you certain you trust them all?":"Ð›ÑŽÐ±Ð¾Ð¹ Ð·Ð°Ñ€ÐµÐ³Ð¸ÑÑ‚Ñ€Ð¸Ñ€Ð¾Ð²Ð°Ð½Ð½Ñ‹Ð¹ Ð² Ð´Ð°Ð½Ð½Ð¾Ð¹ ÑÐ¸ÑÑ‚ÐµÐ¼Ðµ Ð¿Ð¾Ð»ÑŒÐ·Ð¾Ð²Ð°Ñ‚ÐµÐ»ÑŒ ÑÐ¼Ð¾Ð¶ÐµÑ‚ Ð¿Ñ€Ð¾ÑÐ¼Ð°Ñ‚Ñ€Ð¸Ð²Ð°Ñ‚ÑŒ Ð²Ð°Ñˆ ÐºÐ°Ð»ÐµÐ½Ð´Ð°Ñ€ÑŒ \"%{0}\". Ð’Ñ‹ ÑƒÐ²ÐµÑ€ÐµÐ½Ñ‹ Ñ‡Ñ‚Ð¾ Ð´Ð¾Ð²ÐµÑ€ÑÐµÑ‚Ðµ Ð¸Ð¼ Ð²ÑÐµÐ¼?","Publish the Free/Busy information":"ÐŸÑƒÐ±Ð»Ð¸ÐºÐ¾Ð²Ð°Ñ‚ÑŒ Ð¸Ð½Ñ„Ð¾Ñ€Ð¼Ð°Ñ†Ð¸ÑŽ Ð¾ Ð·Ð°Ð½ÑÑ‚Ð¾Ð¼/ÑÐ²Ð¾Ð±Ð¾Ð´Ð½Ð¾Ð¼ Ð²Ñ€ÐµÐ¼ÐµÐ½Ð¸","Unable to rename that folder!":"ÐÐµÐ²Ð¾Ð·Ð¼Ð¾Ð¶Ð½Ð¾ Ð¿ÐµÑ€ÐµÐ¸Ð¼ÐµÐ½Ð¾Ð²Ð°Ñ‚ÑŒ ÑÑ‚Ñƒ Ð¿Ð°Ð¿ÐºÑƒ!","Close":"Ð—Ð°ÐºÑ€Ñ‹Ñ‚ÑŒ","Keep Private":"ÐžÑÑ‚Ð°Ð²Ð¸Ñ‚ÑŒ Ð² Ð»Ð¸Ñ‡Ð½Ð¾Ð¼ Ð´Ð¾ÑÑ‚ÑƒÐ¿Ðµ","An error occured, please try again.":"ÐŸÑ€Ð¾Ð¸Ð·Ð¾ÑˆÐ»Ð° Ð¾ÑˆÐ¸Ð±ÐºÐ°, Ð¿Ð¾Ð²Ñ‚Ð¾Ñ€Ð¸Ñ‚Ðµ Ð¿Ð¾Ð¿Ñ‹Ñ‚ÐºÑƒ Ð¿Ð¾Ð·Ð¶Ðµ.","Jan":"Ð¯Ð½Ð²","Location":"ÐœÐµÑÑ‚Ð¾","noJavascriptRetry":"ÐŸÐ¾Ð²Ñ‚Ð¾Ñ€Ð¸Ñ‚ÑŒ Ð¿Ð¾Ð¿Ñ‹Ñ‚ÐºÑƒ","Log Console (dev.)":"ÐšÐ¾Ð½ÑÐ¾Ð»ÑŒ (Ð´Ð»Ñ Ñ€Ð°Ð·Ñ€Ð°Ð±Ð¾Ñ‚Ñ‡Ð¸ÐºÐ¾Ð²)"};
+            var labels = {"Your account was locked due to too many failed attempts.":"Ð’Ð°Ñˆ Ð°ÐºÐºÐ°ÑƒÐ½Ñ‚ Ð±Ñ‹Ð» Ð·Ð°Ð±Ð»Ð¾ÐºÐ¸Ñ€Ð¾Ð²Ð°Ð½ Ð¸Ð·-Ð·Ð° ÑÐ»Ð¸ÑˆÐºÐ¾Ð¼ Ð±Ð¾Ð»ÑŒÑˆÐ¾Ð³Ð¾ Ñ‡Ð¸ÑÐ»Ð° Ð½ÐµÑƒÐ´Ð°Ñ‡Ð½Ñ‹Ñ… Ð¿Ð¾Ð¿Ñ‹Ñ‚Ð¾Ðº.","Icelandic":"Ãslenska","Galician":"Galego","Indonesian":"bahasa Indonesia","NorwegianNynorsk":"Norsk nynorsk","Bosnian":"Bosanski","Retry":"ÐŸÐ¾Ð²Ñ‚Ð¾Ñ€Ð¸Ñ‚ÑŒ","Swedish":"Svenska","Missing search parameter":"ÐžÑ‚ÑÑƒÑ‚ÑÑ‚Ð²ÑƒÐµÑ‚ Ð¿Ð°Ñ€Ð°Ð¼ÐµÑ‚Ñ€ Ð¿Ð¾Ð¸ÑÐºÐ°","English":"English","The passwords do not match. Please try again.":"ÐŸÐ°Ñ€Ð¾Ð»Ð¸ Ð½Ðµ ÑÐ¾Ð²Ð¿Ð°Ð´Ð°ÑŽÑ‚. ÐŸÐ¾Ð¶Ð°Ð»ÑƒÐ¹ÑÑ‚Ð°, Ð¿Ð¾Ð¿Ñ€Ð¾Ð±ÑƒÐ¹Ñ‚Ðµ ÐµÑ‰Ðµ Ñ€Ð°Ð·.","Authentication Failed":"ÐŸÑ€Ð¾Ð²ÐµÑ€ÐºÐ° Ð´Ð¾ÑÑ‚ÑƒÐ¿Ð° Ð·Ð°Ð²ÐµÑ€ÑˆÐ¸Ð»Ð°ÑÑŒ Ð½ÐµÑƒÐ´Ð°Ñ‡Ð½Ð¾","BrazilianPortuguese":"PortuguÃªs brasileiro","Close":"Ð—Ð°ÐºÑ€Ñ‹Ñ‚ÑŒ","Domain":"Ð”Ð¾Ð¼ÐµÐ½","AboutBox":"Ð Ð°Ð·Ñ€Ð°Ð±Ð¾Ñ‚Ð°Ð½Ð½Ñ‹Ð¹ ÐºÐ¾Ð¼Ð¿Ð°Ð½Ð¸ÑÐ¼Ð¸ Inverse Ð¸ Alinto, SOGo Ð¿Ñ€ÐµÐ´ÑÑ‚Ð°Ð²Ð»ÑÐµÑ‚ ÑÐ¾Ð±Ð¾Ð¹ Ð¿Ð¾Ð»Ð½Ð¾Ñ„ÑƒÐ½ÐºÑ†Ð¸Ð¾Ð½Ð°Ð»ÑŒÐ½Ñ‹Ð¹ ÑÐµÑ€Ð²ÐµÑ€ Ð³Ñ€ÑƒÐ¿Ð¿Ð¾Ð²Ð¾Ð³Ð¾ ÐŸÐž, Ð¾Ñ€Ð¸ÐµÐ½Ñ‚Ð¸Ñ€Ð¾Ð²Ð°Ð½Ð½Ñ‹Ð¹ Ð½Ð° Ð¼Ð°ÑÑˆÑ‚Ð°Ð±Ð¸Ñ€ÑƒÐµÐ¼Ð¾ÑÑ‚ÑŒ Ð¸ Ð¿Ñ€Ð¾ÑÑ‚Ð¾Ñ‚Ñƒ.<br/><br/>\nSOGo Ð¿Ñ€ÐµÐ´Ð¾ÑÑ‚Ð°Ð²Ð»ÑÐµÑ‚ Ð¼Ð¾Ñ‰Ð½Ñ‹Ð¹ Web-Ð¸Ð½Ñ‚ÐµÑ€Ñ„ÐµÐ¹Ñ Ð½Ð° Ð±Ð°Ð·Ðµ AJAX Ð¸ Ð¿Ð¾Ð´Ð´ÐµÑ€Ð¶Ð¸Ð²Ð°ÐµÑ‚ Ð¼Ð½Ð¾Ð¶ÐµÑÑ‚Ð²Ð¾ ÑÐ¾Ð±ÑÑ‚Ð²ÐµÐ½Ð½Ñ‹Ñ… ÐºÐ»Ð¸ÐµÐ½Ñ‚Ð¾Ð² Ð·Ð° ÑÑ‡ÐµÑ‚ Ð¸ÑÐ¿Ð¾Ð»ÑŒÐ·Ð¾Ð²Ð°Ð½Ð¸Ñ ÑÑ‚Ð°Ð½Ð´Ð°Ñ€Ñ‚Ð½Ñ‹Ñ… Ð¿Ñ€Ð¾Ñ‚Ð¾ÐºÐ¾Ð»Ð¾Ð², Ñ‚Ð°ÐºÐ¸Ñ… ÐºÐ°Ðº CalDAV Ð¸ CardDAV.<br/><br/>\nSOGo Ñ€Ð°ÑÐ¿Ñ€Ð¾ÑÑ‚Ñ€Ð°Ð½ÑÐµÑ‚ÑÑ Ð¿Ð¾ Ð»Ð¸Ñ†ÐµÐ½Ð·Ð¸Ð¸ <a href=\"http://gnu.org/licenses/gpl.html\">GNU GPL</a> Ð²ÐµÑ€ÑÐ¸Ð¸ 2 Ð¸Ð»Ð¸ Ð±Ð¾Ð»ÐµÐµ Ð¿Ð¾Ð·Ð´Ð½ÐµÐ¹, Ð° Ð¾Ñ‚Ð´ÐµÐ»ÑŒÐ½Ñ‹Ðµ Ñ‡Ð°ÑÑ‚Ð¸ - Ð¿Ð¾ Ð»Ð¸Ñ†ÐµÐ½Ð·Ð¸Ð¸ GNU LGPL Ð²ÐµÑ€ÑÐ¸Ð¸ 2. Ð­Ñ‚Ð¾ ÑÐ²Ð¾Ð±Ð¾Ð´Ð½Ð¾Ðµ Ð¿Ñ€Ð¾Ð³Ñ€Ð°Ð¼Ð¼Ð½Ð¾Ðµ Ð¾Ð±ÐµÑÐ¿ÐµÑ‡ÐµÐ½Ð¸Ðµ: Ð²Ñ‹ Ð¼Ð¾Ð¶ÐµÑ‚Ðµ ÑÐ²Ð¾Ð±Ð¾Ð´Ð½Ð¾ Ð¸Ð·Ð¼ÐµÐ½ÑÑ‚ÑŒ Ð¸ Ñ€Ð°ÑÐ¿Ñ€Ð¾ÑÑ‚Ñ€Ð°Ð½ÑÑ‚ÑŒ ÐµÐ³Ð¾. Ð“ÐÐ ÐÐÐ¢Ð˜Ð˜ ÐÐ• ÐŸÐ Ð•Ð”ÐžÐ¡Ð¢ÐÐ’Ð›Ð¯Ð®Ð¢Ð¡Ð¯, Ð² Ð¿Ñ€ÐµÐ´ÐµÐ»Ð°Ñ…, Ñ€Ð°Ð·Ñ€ÐµÑˆÐµÐ½Ð½Ñ‹Ñ… Ð·Ð°ÐºÐ¾Ð½Ð¾Ð´Ð°Ñ‚ÐµÐ»ÑŒÑÑ‚Ð²Ð¾Ð¼.<br/><br/>\nÐ Ð°Ð·Ð»Ð¸Ñ‡Ð½Ñ‹Ðµ Ð²Ð°Ñ€Ð¸Ð°Ð½Ñ‚Ñ‹ Ð¿Ð¾Ð´Ð´ÐµÑ€Ð¶ÐºÐ¸ ÑÐ¼. Ð½Ð° <a href=\"http://www.sogo.nu/en/support/community.html\">ÑÑ‚Ð¾Ð¹ ÑÑ‚Ñ€Ð°Ð½Ð¸Ñ†Ðµ</a>.","Kazakh":"ÒšÐ°Ð·Ð°Ò›","cookiesNotEnabled":"Ð’Ñ‹ Ð½Ðµ Ð¼Ð¾Ð¶ÐµÑ‚Ðµ Ð²Ð¾Ð¹Ñ‚Ð¸ Ð² ÑÐ¸ÑÑ‚ÐµÐ¼Ñƒ, Ñ‚Ð°Ðº ÐºÐ°Ðº Ð² Ð’Ð°ÑˆÐµÐ¼ Ð±Ñ€Ð°ÑƒÐ·ÐµÑ€Ðµ Ð²Ñ‹ÐºÐ»ÑŽÑ‡ÐµÐ½Ñ‹ cookies. ÐŸÐ¾Ð¶Ð°Ð»ÑƒÐ¹ÑÑ‚Ð° Ñ€Ð°Ð·Ñ€ÐµÑˆÐ¸Ñ‚Ðµ Ð½Ð°ÑˆÐµÐ¼Ñƒ ÑÐ°Ð¹Ñ‚Ñƒ Ð¸ÑÐ¿Ð¾Ð»ÑŒÐ·Ð¾Ð²Ð°Ñ‚ÑŒ cookies Ð² Ð½Ð°ÑÑ‚Ñ€Ð¾Ð¹ÐºÐ°Ñ… Ð’Ð°ÑˆÐµÐ³Ð¾ Ð±Ñ€Ð°ÑƒÐ·ÐµÑ€Ð°.","Croatian":"Hrvatski","Verification Code":"ÐšÐ¾Ð´ Ð²ÐµÑ€Ð¸Ñ„Ð¸ÐºÐ°Ñ†Ð¸Ð¸","Password must not be empty.":"ÐŸÐ°Ñ€Ð¾Ð»ÑŒ Ð½Ðµ Ð´Ð¾Ð»Ð¶ÐµÐ½ Ð±Ñ‹Ñ‚ÑŒ Ð¿ÑƒÑÑ‚Ñ‹Ð¼.","Please wait...":"ÐŸÐ¾Ð¶Ð°Ð»ÑƒÐ¹ÑÑ‚Ð°, Ð¿Ð¾Ð´Ð¾Ð¶Ð´Ð¸Ñ‚Ðµ...","minutes":"Ð¼Ð¸Ð½ÑƒÑ‚","Portuguese":"PortuguÃªs","Password about to expire":"ÐŸÐ°Ñ€Ð¾Ð»ÑŒ Ð¸ÑÑ‚ÐµÐºÐ°ÐµÑ‚ Ð² Ð±Ð»Ð¸Ð¶Ð°Ð¹ÑˆÐµÐµ Ð²Ñ€ÐµÐ¼Ñ","Download":"Ð¡ÐºÐ°Ñ‡Ð°Ñ‚ÑŒ","About":"Ðž ÑÐ¸ÑÑ‚ÐµÐ¼Ðµ","Enter the 6-digit verification code from your TOTP application.":"Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ 6-Ð·Ð½Ð°Ñ‡Ð½Ñ‹Ð¹ ÐºÐ¾Ð´ Ð¿Ð¾Ð´Ñ‚Ð²ÐµÑ€Ð¶Ð´ÐµÐ½Ð¸Ñ Ð¸Ð· Ð¿Ñ€Ð¸Ð»Ð¾Ð¶ÐµÐ½Ð¸Ñ Ð´Ð²ÑƒÑ…Ñ„Ð°ÐºÑ‚Ð¾Ñ€Ð½Ð¾Ð¹ Ð°ÑƒÑ‚ÐµÐ½Ñ‚Ð¸Ñ„Ð¸ÐºÐ°Ñ†Ð¸Ð¸.","Missing type parameter":"ÐžÑ‚ÑÑƒÑ‚ÑÑ‚Ð²ÑƒÐµÑ‚ Ð¿Ð°Ñ€Ð°Ð¼ÐµÑ‚Ñ€ Ñ‚Ð¸Ð¿Ð°","Wrong username or password.":"ÐÐµÐ¿Ñ€Ð°Ð²Ð¸Ð»ÑŒÐ½Ñ‹Ð¹ Ð»Ð¾Ð³Ð¸Ð½ Ð¸Ð»Ð¸ Ð¿Ð°Ñ€Ð¾Ð»ÑŒ.","Back":"ÐÐ°Ð·Ð°Ð´","Your account was locked due to an expired password.":"Ð’Ð°Ñˆ Ð°ÐºÐºÐ°ÑƒÐ½Ñ‚ Ð±Ñ‹Ð» Ð·Ð°Ð±Ð»Ð¾ÐºÐ¸Ñ€Ð¾Ð²Ð°Ð½ Ð² ÑÐ²ÑÐ·Ð¸ Ñ Ð¸ÑÑ‚ÐµÑ‡ÐµÐ½Ð¸Ðµ ÑÑ€Ð¾ÐºÐ° Ð´ÐµÐ¹ÑÑ‚Ð²Ð¸Ñ Ð¿Ð°Ñ€Ð¾Ð»Ñ.","Login failed due to unhandled error case:":"Ð’Ð¾Ð¹Ñ‚Ð¸ Ð½Ðµ ÑƒÐ´Ð°Ð»Ð¾ÑÑŒ Ð¸Ð·-Ð·Ð° Ð½ÐµÐ¾Ð±Ñ€Ð°Ð±Ð¾Ñ‚Ð°Ð½Ð½Ð¾Ð³Ð¾ ÑÐ»ÑƒÑ‡Ð°Ñ Ð¾ÑˆÐ¸Ð±ÐºÐ¸:","Password Grace Period":"Ð›ÑŒÐ³Ð¾Ñ‚Ð½Ñ‹Ð¹ Ð¿ÐµÑ€Ð¸Ð¾Ð´ Ð´ÐµÐ¹ÑÑ‚Ð²Ð¸Ñ Ð¿Ð°Ñ€Ð¾Ð»Ñ","Language":"Ð¯Ð·Ñ‹Ðº","Change your Password":"Ð¡Ð¼ÐµÐ½Ð¸Ñ‚Ðµ Ð’Ð°Ñˆ Ð¿Ð°Ñ€Ð¾Ð»ÑŒ","Arabic":"Ø§Ù„Ø¹Ø±Ø¨ÙŠØ©","alternativeBrowserSafari":"Ð¢Ð°ÐºÐ¶Ðµ Ð¼Ð¾Ð¶Ð½Ð¾ Ð¸ÑÐ¿Ð¾Ð»ÑŒÐ·Ð¾Ð²Ð°Ñ‚ÑŒ Safari.","Slovak":"Slovensky","Password recovery email in error":"ÐžÑˆÐ¸Ð±ÐºÐ° Ð² ÑÐ»ÐµÐºÑ‚Ñ€Ð¾Ð½Ð½Ð¾Ð¹ Ð¿Ð¾Ñ‡Ñ‚Ðµ Ð´Ð»Ñ Ð²Ð¾ÑÑÑ‚Ð°Ð½Ð¾Ð²Ð»ÐµÐ½Ð¸Ñ Ð¿Ð°Ñ€Ð¾Ð»Ñ","Password lost":"ÐŸÐ°Ñ€Ð¾Ð»ÑŒ ÑƒÑ‚ÐµÑ€ÑÐ½","hours":"Ñ‡Ð°ÑÐ¾Ð²","Japanese":"æ—¥æœ¬èªž","You have %{0} logins remaining before your account is locked. Please change your password in the preference dialog.":"Ð£ Ð²Ð°Ñ Ð¾ÑÑ‚Ð°Ð»Ð¾ÑÑŒ % {0}Ð²Ñ…Ð¾Ð´Ð¾Ð² Ð´Ð¾ Ð±Ð»Ð¾ÐºÐ¸Ñ€Ð¾Ð²ÐºÐ¸ Ð’Ð°ÑˆÐµÐ¹ ÑƒÑ‡ÐµÑ‚Ð½Ð¾Ð¹ Ð·Ð°Ð¿Ð¸ÑÐ¸. ÐŸÐ¾Ð¶Ð°Ð»ÑƒÐ¹ÑÑ‚Ð°, ÑÐ¼ÐµÐ½Ð¸Ñ‚Ðµ Ð’Ð°Ñˆ Ð¿Ð°Ñ€Ð¾Ð»ÑŒ Ð² Ð´Ð¸Ð°Ð»Ð¾Ð³Ð¾Ð²Ð¾Ð¼ Ð¾ÐºÐ½Ðµ Ð¿Ñ€ÐµÐ´Ð¿Ð¾Ñ‡Ñ‚ÐµÐ½Ð¸Ñ.","Answer":"ÐžÑ‚Ð²ÐµÑ‚","A link will be sent to %{0}":"Ð¡ÑÑ‹Ð»ÐºÐ° Ð±ÑƒÐ´ÐµÑ‚ Ð¾Ñ‚Ð¿Ñ€Ð°Ð²Ð»ÐµÐ½Ð° Ð½Ð° %{0}","Username":"Ð›Ð¾Ð³Ð¸Ð½","Unhandled HTTP error code: %{0}":"ÐÐµÐ¾Ð±Ñ€Ð°Ð±Ð¾Ñ‚Ð°Ð½Ð½Ñ‹Ðµ Ð¾ÑˆÐ¸Ð±ÐºÐ¸ HTTP-ÐºÐ¾Ð´:% {0}","SpanishArgentina":"EspaÃ±ol (Argentina)","Invalid configuration for email password recovery":"ÐÐµÐ¿Ñ€Ð°Ð²Ð¸Ð»ÑŒÐ½Ð°Ñ Ð½Ð°ÑÑ‚Ñ€Ð¾Ð¹ÐºÐ° ÑÐ»ÐµÐºÑ‚Ñ€Ð¾Ð½Ð½Ð¾Ð¹ Ð¿Ð¾Ñ‡Ñ‚Ñ‹ Ð´Ð»Ñ Ð²Ð¾ÑÑÑ‚Ð°Ð½Ð¾Ð²Ð»ÐµÐ½Ð¸Ñ Ð¿Ð°Ñ€Ð¾Ð»Ñ","Unhandled error response":"ÐÐµÐ¾Ð±Ñ€Ð°Ð±Ð¾Ñ‚Ð°Ð½Ð½Ñ‹Ð¹ Ð¾Ñ‚Ð²ÐµÑ‚ Ð¾Ð± Ð¾ÑˆÐ¸Ð±ÐºÐµ","Unhandled policy error: %{0}":"ÐÐµÐ¾Ð±Ñ€Ð°Ð±Ð¾Ñ‚Ð°Ð½Ð½Ñ‹Ðµ Ð¾ÑˆÐ¸Ð±ÐºÐ¸ Ð¿Ð¾Ð»Ð¸Ñ‚Ð¸ÐºÐ¸:% {0}","Password change failed - Password is too short":"ÐžÑˆÐ¸Ð±ÐºÐ° Ð¸Ð·Ð¼ÐµÐ½ÐµÐ½Ð¸Ñ Ð¿Ð°Ñ€Ð¾Ð»Ñ - ÐŸÐ°Ñ€Ð¾Ð»ÑŒ ÑÐ»Ð¸ÑˆÐºÐ¾Ð¼ ÐºÐ¾Ñ€Ð¾Ñ‚ÐºÐ¸Ð¹","Finnish":"Suomi","Two-factor authentication has been disabled. Visit the Preferences module to restore two-factor authentication and reconfigure your TOTP application.":"Ð”Ð²ÑƒÑ…Ñ„Ð°ÐºÑ‚Ð¾Ñ€Ð½Ð°Ñ Ð°ÑƒÑ‚ÐµÐ½Ñ‚Ð¸Ñ„Ð¸ÐºÐ°Ñ†Ð¸Ñ Ð¾Ñ‚ÐºÐ»ÑŽÑ‡ÐµÐ½Ð°. Ð’ÐºÐ»ÑŽÑ‡Ð¸Ñ‚Ðµ Ð´Ð²ÑƒÑ…Ñ„Ð°ÐºÑ‚Ð¾Ñ€Ð½ÑƒÑŽ Ð°ÑƒÑ‚ÐµÐ½Ñ‚Ð¸Ñ„Ð¸ÐºÐ°Ñ†Ð¸ÑŽ Ð² Ð¿Ð°Ñ€Ð°Ð¼ÐµÑ‚Ñ€Ð°Ñ… Ð¸ Ð¿ÐµÑ€ÐµÐ½Ð°ÑÑ‚Ñ€Ð¾Ð¹Ñ‚Ðµ Ð¿Ñ€Ð¾Ð³Ñ€Ð°Ð¼Ð¼Ñƒ TOTP.","browserNotCompatible":"ÐœÑ‹ Ð¾Ð¿Ñ€ÐµÐ´ÐµÐ»Ð¸Ð»Ð¸, Ñ‡Ñ‚Ð¾ Ð²ÐµÑ€ÑÐ¸Ñ Ð’Ð°ÑˆÐµÐ³Ð¾ Ð±Ñ€Ð°ÑƒÐ·ÐµÑ€Ð° Ð½Ðµ Ð¿Ð¾Ð´Ð´ÐµÑ€Ð¶Ð¸Ð²Ð°ÐµÑ‚ÑÑ Ð½Ð° Ð½Ð°ÑˆÐµÐ¼ ÑÐ°Ð¹Ñ‚Ðµ. ÐœÑ‹ Ñ€ÐµÐºÐ¾Ð¼ÐµÐ½Ð´ÑƒÐµÐ¼ Ð¸ÑÐ¿Ð¾Ð»ÑŒÐ·Ð¾Ð²Ð°Ñ‚ÑŒ Firefox. ÐÐ°Ð¶Ð¼Ð¸Ñ‚Ðµ Ð½Ð° ÑÑÑ‹Ð»ÐºÑƒ Ð½Ð¸Ð¶Ðµ, Ñ‡Ñ‚Ð¾Ð±Ñ‹ Ð·Ð°Ð³Ñ€ÑƒÐ·Ð¸Ñ‚ÑŒ ÑÐ²ÐµÐ¶ÑƒÑŽ Ð²ÐµÑ€ÑÐ¸ÑŽ Ð±Ñ€Ð°ÑƒÐ·ÐµÑ€Ð°.","Serbian":"Ð¡Ñ€Ð¿ÑÐºÐ¸","Password change failed - Permission denied":"ÐžÑˆÐ¸Ð±ÐºÐ° Ð¸Ð·Ð¼ÐµÐ½ÐµÐ½Ð¸Ñ Ð¿Ð°Ñ€Ð¾Ð»Ñ - Ð”Ð¾ÑÑ‚ÑƒÐ¿ Ð·Ð°Ð¿Ñ€ÐµÑ‰ÐµÐ½","Welcome":"Ð”Ð¾Ð±Ñ€Ð¾ Ð¿Ð¾Ð¶Ð°Ð»Ð¾Ð²Ð°Ñ‚ÑŒ","alternativeBrowsers":"Ð’ ÐºÐ°Ñ‡ÐµÑÑ‚Ð²Ðµ Ð°Ð»ÑŒÑ‚ÐµÑ€Ð½Ð°Ñ‚Ð¸Ð²Ñ‹ Ð¼Ð¾Ð¶Ð½Ð¾ Ð¸ÑÐ¿Ð¾Ð»ÑŒÐ·Ð¾Ð²Ð°Ñ‚ÑŒ ÑÐ»ÐµÐ´ÑƒÑŽÑ‰Ð¸Ðµ Ð¿Ñ€Ð¾Ð³Ñ€Ð°Ð¼Ð¼Ñ‹:","Secondary e-mail":"Ð”Ð¾Ð¿Ð¾Ð»Ð½Ð¸Ñ‚ÐµÐ»ÑŒÐ½Ñ‹Ð¹ Ð°Ð´Ñ€ÐµÑ ÑÐ»ÐµÐºÑ‚Ñ€Ð¾Ð½Ð½Ð¾Ð¹ Ð¿Ð¾Ñ‡Ñ‚Ñ‹","Welsh":"Cymraeg","Polish":"Polski","Confirmation":"ÐŸÐ¾Ð´Ñ‚Ð²ÐµÑ€Ð¶Ð´ÐµÐ½Ð¸Ðµ","Password change is not supported.":"Ð¡Ð¼ÐµÐ½Ð° Ð¿Ð°Ñ€Ð¾Ð»Ñ Ð½Ðµ Ð¿Ð¾Ð´Ð´ÐµÑ€Ð¶Ð¸Ð²Ð°ÐµÑ‚ÑÑ.","SerbianLatin":"Srpski","title":"SOGo","Czech":"ÄŒesky","Hungarian":"Magyar","ChineseChina":"ç®€ä½“ä¸­æ–‡","Your password has expired, please enter a new one below":"Ð’Ð°Ñˆ Ð¿Ð°Ñ€Ð¾Ð»ÑŒ Ð¸ÑÑ‚ÐµÐº, Ð²Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð½Ð¾Ð²Ñ‹Ð¹ Ð½Ð¸Ð¶Ðµ","Password reset":"ÐŸÐ°Ñ€Ð¾Ð»ÑŒ ÑÐ±Ñ€Ð¾ÑˆÐµÐ½","Remember username":"Ð—Ð°Ð¿Ð¾Ð¼Ð½Ð¸Ñ‚ÑŒ Ð¸Ð¼Ñ Ð¿Ð¾Ð»ÑŒÐ·Ð¾Ð²Ð°Ñ‚ÐµÐ»Ñ","Romanian":"RomÃ¢nÄƒ","Invalid secret question answer":"ÐÐµÐ¿Ñ€Ð°Ð²Ð¸Ð»ÑŒÐ½Ñ‹Ð¹ Ð¾Ñ‚Ð²ÐµÑ‚ Ð½Ð° ÑÐµÐºÑ€ÐµÑ‚Ð½Ñ‹Ð¹ Ð²Ð¾Ð¿Ñ€Ð¾Ñ","Password change failed - Insufficient password quality":"ÐžÑˆÐ¸Ð±ÐºÐ° Ð¸Ð·Ð¼ÐµÐ½ÐµÐ½Ð¸Ñ Ð¿Ð°Ñ€Ð¾Ð»Ñ - ÐŸÐ°Ñ€Ð¾Ð»ÑŒ Ð½ÐµÐ´Ð¾ÑÑ‚Ð°Ñ‚Ð¾Ñ‡Ð½Ð¾ ÑÐ»Ð¾Ð¶Ð½Ñ‹Ð¹","Connect":"Ð¡Ð¾ÐµÐ´Ð¸Ð½ÐµÐ½Ð¸Ðµ","Login failed due to unhandled error case":"Ð’Ð¾Ð¹Ñ‚Ð¸ Ð½Ðµ ÑƒÐ´Ð°Ð»Ð¾ÑÑŒ Ð¸Ð·-Ð·Ð° Ð½ÐµÐ¾Ð±Ñ€Ð°Ð±Ð¾Ñ‚Ð°Ð½Ð½Ð¾Ð³Ð¾ ÑÐ»ÑƒÑ‡Ð°Ñ Ð¾ÑˆÐ¸Ð±ÐºÐ¸","_loadedFrameworks":["MainUI"],"TurkishTurkey":"TÃ¼rkÃ§e (TÃ¼rkiye)","German":"Deutsch","Danish":"Dansk (Danmark)","Slovenian":"SlovenÅ¡Äina","SpanishSpain":"EspaÃ±ol (EspaÃ±a)","Hi %{0},\nThere was a request to change your password!\n\nIf you did not make this request then please ignore this email.\n\nOtherwise, please click this link to change your password: %{1}":"Ð—Ð´Ñ€Ð°Ð²ÑÑ‚Ð²ÑƒÐ¹Ñ‚Ðµ %{0},\nÐŸÐ¾ÑÑ‚ÑƒÐ¿Ð¸Ð» Ð·Ð°Ð¿Ñ€Ð¾Ñ Ð½Ð° Ð¸Ð·Ð¼ÐµÐ½ÐµÐ½Ð¸Ðµ Ð²Ð°ÑˆÐµÐ³Ð¾ Ð¿Ð°Ñ€Ð¾Ð»Ñ!\n\nÐ•ÑÐ»Ð¸ Ð²Ñ‹ Ð½Ðµ Ð´ÐµÐ»Ð°Ð»Ð¸ ÑÑ‚Ð¾Ð³Ð¾ Ð·Ð°Ð¿Ñ€Ð¾ÑÐ°, Ñ‚Ð¾, Ð¿Ð¾Ð¶Ð°Ð»ÑƒÐ¹ÑÑ‚Ð°, Ð¿Ñ€Ð¾Ð¸Ð³Ð½Ð¾Ñ€Ð¸Ñ€ÑƒÐ¹Ñ‚Ðµ ÑÑ‚Ð¾ Ð¿Ð¸ÑÑŒÐ¼Ð¾.\n\nÐ•ÑÐ»Ð¸ Ð²Ñ‹ Ð·Ð°Ð¿Ñ€Ð°ÑˆÐ¸Ð²Ð°Ð»Ð¸ Ð¸Ð·Ð¼ÐµÐ½ÐµÐ½Ð¸Ðµ Ð¿Ð°Ñ€Ð¾Ð»Ñ - Ñ‚Ð¾ Ð¿ÐµÑ€ÐµÐ¹Ð´Ð¸Ñ‚Ðµ Ð¿Ð¾ ÑÑ‚Ð¾Ð¹ ÑÑÑ‹Ð»ÐºÐµ: %{1}","seconds":"ÑÐµÐºÑƒÐ½Ð´","Password change failed - Password is in history":"ÐžÑˆÐ¸Ð±ÐºÐ° Ð¸Ð·Ð¼ÐµÐ½ÐµÐ½Ð¸Ñ Ð¿Ð°Ñ€Ð¾Ð»Ñ - ÐŸÐ°Ñ€Ð¾Ð»ÑŒ ÑƒÐ¶Ðµ ÐµÑÑ‚ÑŒ Ð² Ð¸ÑÑ‚Ð¾Ñ€Ð¸Ð¸","Password change failed":"ÐžÑˆÐ¸Ð±ÐºÐ° Ð¸Ð·Ð¼ÐµÐ½ÐµÐ½Ð¸Ñ Ð¿Ð°Ñ€Ð¾Ð»Ñ","French":"FranÃ§ais","Password":"ÐŸÐ°Ñ€Ð¾Ð»ÑŒ","Montenegrin":"Crnogorski","Next":"Ð”Ð°Ð»ÐµÐµ","New password":"ÐÐ¾Ð²Ñ‹Ð¹ Ð¿Ð°Ñ€Ð¾Ð»ÑŒ","Your password is going to expire in %{0} %{1}.":"Ð’Ð°Ñˆ Ð¿Ð°Ñ€Ð¾Ð»ÑŒ Ð±ÑƒÐ´ÐµÑ‚ Ð³Ð¾Ð´ÐµÐ½ Ð´Ð¾  % {0}% {1}.","Macedonian":"ÐœÐ°ÐºÐµÐ´Ð¾Ð½ÑÐºÐ¸","Password change failed - Password is too young":"ÐžÑˆÐ¸Ð±ÐºÐ° Ð¸Ð·Ð¼ÐµÐ½ÐµÐ½Ð¸Ñ Ð¿Ð°Ñ€Ð¾Ð»Ñ - Ð¿Ð°Ñ€Ð¾Ð»ÑŒ ÑÐ»Ð¸ÑˆÐºÐ¾Ð¼ Ð¼Ð¾Ð»Ð¾Ð´","Cancel":"ÐžÑ‚Ð¼ÐµÐ½Ð¸Ñ‚ÑŒ","days":"Ð´Ð½ÐµÐ¹","Dutch":"Nederlands","Ukrainian":"Ð£ÐºÑ€Ð°Ñ—Ð½ÑÑŒÐºÐ°","Bulgarian":"Ð‘ÑŠÐ»Ð³Ð°Ñ€ÑÐºÐ¸","Russian":"Ð ÑƒÑÑÐºÐ¸Ð¹","Authenticating":"ÐŸÑ€Ð¾Ð²ÐµÑ€ÐºÐ° Ð´Ð¾ÑÑ‚ÑƒÐ¿Ð°","ChineseTaiwan":"æ­£é«”ä¸­æ–‡","choose":"Ð’Ñ‹Ð±Ñ€Ð°Ñ‚ÑŒ...","Hebrew":"×¢×‘×¨×™×ª","You provided an invalid TOTP key.":"Ð’Ð²ÐµÐ´Ñ‘Ð½Ð½Ñ‹Ð¹ TOTP-ÐºÐ¾Ð´ Ð½ÐµÐ²ÐµÑ€ÐµÐ½.","A password reset link has been sent, please check your recovery e-mail mailbox and click on the link":"Ð’Ð°Ð¼ Ð±Ñ‹Ð»Ð° Ð²Ñ‹ÑÐ»Ð°Ð½Ð° ÑÑÑ‹Ð»ÐºÐ° Ð½Ð° Ð²Ð¾ÑÑÑ‚Ð°Ð½Ð¾Ð²Ð»ÐµÐ½Ð¸Ðµ Ð¿Ð°Ñ€Ð¾Ð»Ñ, Ð¿Ñ€Ð¾Ð²ÐµÑ€ÑŒÑ‚Ðµ ÑÐ²Ð¾Ð¹ Ð¿Ð¾Ñ‡Ñ‚Ð¾Ð²Ñ‹Ð¹ ÑÑ‰Ð¸Ðº Ð¸ Ð¿ÐµÑ€ÐµÐ¹Ð´Ð¸Ñ‚Ðµ Ð¿Ð¾ ÑÑÑ‹Ð»ÐºÐµ","The password was changed successfully.":"ÐŸÐ°Ñ€Ð¾Ð»ÑŒ Ð±Ñ‹Ð» ÑƒÑÐ¿ÐµÑˆÐ½Ð¾ Ð¸Ð·Ð¼ÐµÐ½ÐµÐ½.","No password recovery method has been defined for this user":"Ð”Ð»Ñ Ð¿Ð¾Ð»ÑŒÐ·Ð¾Ð²Ð°Ñ‚ÐµÐ»Ñ Ð½Ðµ Ð¾Ð¿Ñ€ÐµÐ´ÐµÐ»ÐµÐ½ ÑÐ¿Ð¾ÑÐ¾Ð± Ð²Ð¾ÑÑÑ‚Ð°Ð½Ð¾Ð²Ð»ÐµÐ½Ð¸Ñ Ð¿Ð°Ñ€Ð¾Ð»Ñ","Basque":"Euskara","NorwegianBokmal":"Norsk bokmÃ¥l","Please enter a new password below":"ÐŸÐ¾Ð¶Ð°Ð»ÑƒÐ¹ÑÑ‚Ð°, Ð²Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð½Ð¾Ð²Ñ‹Ð¹ Ð¿Ð°Ñ€Ð¾Ð»ÑŒ Ð½Ð¸Ð¶Ðµ","Italian":"Italiano","Catalan":"CatalÃ ","Latvian":"LatvieÅ¡u","Lithuanian":"LietuviÅ³"};
+          </script>
+
+          
+
+          
+          <script type="text/javascript" src="/SOGo.woa/WebServerResources/js/vendor/lodash.min.js?lm=1740494937"></script>
+          <script type="text/javascript" src="/SOGo.woa/WebServerResources/js/vendor/angular.min.js?lm=1740494937"></script>
+          <script type="text/javascript" src="/SOGo.woa/WebServerResources/js/vendor/angular-animate.min.js?lm=1740494937"></script>
+          <script type="text/javascript" src="/SOGo.woa/WebServerResources/js/vendor/angular-sanitize.min.js?lm=1740494937"></script>
+          <script type="text/javascript" src="/SOGo.woa/WebServerResources/js/vendor/angular-aria.min.js?lm=1740494937"></script>
+          <script type="text/javascript" src="/SOGo.woa/WebServerResources/js/vendor/angular-cookies.min.js?lm=1740494937"></script>
+          <script type="text/javascript" src="/SOGo.woa/WebServerResources/js/vendor/angular-messages.min.js?lm=1740494937"></script>
+          <script type="text/javascript" src="/SOGo.woa/WebServerResources/js/vendor/angular-material.min.js?lm=1740494937"></script>
+          <script type="text/javascript" src="/SOGo.woa/WebServerResources/js/vendor/angular-ui-router.min.js?lm=1740494937"></script>
+
+          
+          
+          
+            <script type="text/javascript" src="/SOGo.woa/WebServerResources/js/Main.js?lm=1740494937"></script>
+          
+            <script type="text/javascript" src="/SOGo.woa/WebServerResources/js/Common.js?lm=1740494937"></script>
+          
+          
+            <script type="text/javascript" src="/SOGo.woa/WebServerResources/js/theme.js?lm=1742559566"></script>
+          
+            <script type="text/javascript" src="/SOGo.woa/WebServerResources/js/custom-sogo.js?lm=1742559566"></script>
+          
+        
+        
+
+      </body>
+    </html>
+  
+
+  
